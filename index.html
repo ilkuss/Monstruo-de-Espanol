@@ -211,6 +211,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 </head>
 <body>
 >
+<audio id="bgMusic" loop preload="auto" src="beat.mp3"></audio>
 <div class="wrap">
   <div class="hero">
     <div style="font-size:4rem;line-height:1;margin-bottom:.4rem">🇪🇸</div>
@@ -1248,75 +1249,22 @@ function soundSlay(){
 function startMusic(){
   if(musicPlaying) return;
   musicPlaying=true;
+  const audio=document.getElementById('bgMusic');
+  audio.volume=0.4;
+  audio.play().catch(()=>{});
   document.getElementById('musicBtn').textContent='🎵 Music ON';
   document.getElementById('musicBtn').style.color='var(--accent)';
   document.getElementById('musicBtn').style.borderColor='var(--accent)';
-  scheduleDembow();
 }
 
 function stopMusic(){
   musicPlaying=false;
+  const audio=document.getElementById('bgMusic');
+  audio.pause();
+  audio.currentTime=0;
   document.getElementById('musicBtn').textContent='🎵 Music OFF';
   document.getElementById('musicBtn').style.color='var(--muted2)';
   document.getElementById('musicBtn').style.borderColor='var(--border)';
-  Object.values(musicNodes).forEach(n=>{ try{n.stop();}catch(e){} });
-  musicNodes={};
-}
-
-let dembowStartTime=0;
-function scheduleDembow(){
-  if(!musicPlaying) return;
-  const ac=getAC();
-  const bpm=95;
-  const beat=60/bpm;
-  const bar=beat*4;
-  const now=ac.currentTime;
-  const start = dembowStartTime < now ? now+0.05 : dembowStartTime;
-  dembowStartTime = start + bar*2;
-
-  const mGain=ac.createGain(); mGain.gain.value=0.28; mGain.connect(ac.destination);
-
-  // bass line
-  const bassNotes=[
-    [0,55,0.3],[beat*0.5,55,0.15],[beat*0.75,49,0.2],
-    [beat,52,0.25],[beat*1.5,55,0.15],[beat*1.75,52,0.1],
-    [beat*2,55,0.3],[beat*2.5,55,0.15],[beat*2.75,49,0.2],
-    [beat*3,52,0.25],[beat*3.5,55,0.15],[beat*3.75,49,0.1],
-    [bar+0,58,0.3],[bar+beat*0.5,58,0.15],[bar+beat*0.75,55,0.2],
-    [bar+beat,52,0.25],[bar+beat*1.5,55,0.15],
-    [bar+beat*2,58,0.3],[bar+beat*2.5,58,0.15],[bar+beat*2.75,55,0.2],
-    [bar+beat*3,52,0.3],[bar+beat*3.5,49,0.2],[bar+beat*3.75,52,0.1],
-  ];
-  bassNotes.forEach(([d,midi,dur])=>{
-    const freq=440*Math.pow(2,(midi-69)/12);
-    playTone(freq,'sawtooth',dur,0.5,start+d,mGain);
-    playTone(freq/2,'sine',dur,0.4,start+d,mGain);
-  });
-
-  // kicks
-  const kicks=[0,beat*0.75,beat*1.5,beat*2,beat*2.75,beat*3.5,
-               bar,bar+beat*0.75,bar+beat*1.5,bar+beat*2,bar+beat*2.75,bar+beat*3.5];
-  kicks.forEach(d=>{
-    playNoise(0.08,0.6,start+d,mGain,20);
-    playTone(60,'sine',0.12,0.7,start+d,mGain);
-  });
-
-  // snares
-  const snares=[beat,beat*3,bar+beat,bar+beat*3];
-  snares.forEach(d=>playNoise(0.07,0.4,start+d,mGain,1800));
-
-  // hi-hats
-  for(let i=0;i<16;i++){
-    if(i%2===0) continue;
-    playNoise(0.04,0.15,start+(i*(beat/4)),mGain,8000);
-  }
-  for(let i=0;i<16;i++){
-    if(i%2===0) continue;
-    playNoise(0.04,0.15,start+bar+(i*(beat/4)),mGain,8000);
-  }
-
-  const delay=(dembowStartTime-ac.currentTime-0.1)*1000;
-  setTimeout(()=>scheduleDembow(), Math.max(delay,50));
 }
 
 // ════════════════════════════════════════════════════════════
@@ -1363,7 +1311,7 @@ document.querySelector('.hero').insertAdjacentHTML('beforeend',`
       border-radius:20px;cursor:pointer;transition:all .2s;letter-spacing:.04em">
       🎵 Music OFF
     </button>
-    <span style="font-size:11px;color:var(--muted);margin-left:8px">reggaeton study beat</span>
+    <span style="font-size:11px;color:var(--muted);margin-left:8px">bad bunny type beat 🐰</span>
   </div>
 `);
 
