@@ -6,126 +6,183 @@
 <title>El Monstruo del Español</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root {
+:root{
   --bg:#09090f;--bg2:#111118;--bg3:#18181f;--border:#252530;
-  --accent:#c8ff3e;--accent2:#ff5c3e;--accent3:#3ec8ff;--gold:#ffd700;--purple:#b97cff;
+  --accent:#c8ff3e;--accent2:#ff5c3e;--accent3:#3ec8ff;--gold:#ffd700;--purple:#b97cff;--pink:#ff6eb4;
   --text:#efefef;--muted:#55556a;--muted2:#888899;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(200,255,62,.06),transparent);pointer-events:none;z-index:0}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(200,255,62,.05),transparent);pointer-events:none;z-index:0}
 
 .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:2rem 1.25rem 5rem}
 
 /* HERO */
-.hero{text-align:center;padding:2.5rem 0 2rem}
-.flag{font-size:2.5rem;margin-bottom:.75rem;display:block}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,6rem);line-height:.9;letter-spacing:.03em;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.hero{text-align:center;padding:2rem 0 1.5rem}
+.flag{font-size:2.2rem;margin-bottom:.5rem;display:block}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,8vw,5.5rem);line-height:.9;letter-spacing:.03em;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.4rem}
 .hero p{font-size:12px;color:var(--muted2);letter-spacing:.1em;text-transform:uppercase}
 
-/* TOP GRID */
-.top-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-@media(max-width:500px){.top-grid{grid-template-columns:1fr}}
-
-/* CARDS */
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.card.green::before{background:linear-gradient(90deg,var(--accent),transparent)}
-.card.blue::before{background:linear-gradient(90deg,var(--accent3),transparent)}
-.card.red::before{background:linear-gradient(90deg,var(--accent2),transparent)}
-.card.gold::before{background:linear-gradient(90deg,var(--gold),transparent)}
-
-.card-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:.4rem}
-.card-big{font-family:'Bebas Neue',sans-serif;font-size:3rem;line-height:1;color:var(--accent);letter-spacing:.02em}
-.card-big.blue{color:var(--accent3)}
-.card-big.gold{color:var(--gold)}
-.card-sub{font-size:12px;color:var(--muted2);margin-top:3px}
-
-/* LEVEL BAR */
-.level-card{grid-column:1/-1;background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;position:relative;overflow:hidden}
+/* LEVEL CARD */
+.level-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:10px;position:relative;overflow:hidden}
 .level-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--purple))}
-.level-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:12px;flex-wrap:wrap}
-.level-left{}
-.lv-badge{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:.06em;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#000;padding:3px 12px;border-radius:20px;margin-bottom:4px}
-.lv-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.04em}
-.lv-xp{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--accent);letter-spacing:.02em;line-height:1}
-.lv-xp-label{font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;text-align:right}
-.bar-wrap{}
-.bar-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--muted2);margin-bottom:5px}
-.bar-track{height:10px;background:var(--bg3);border-radius:5px;overflow:hidden}
-.bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--accent),var(--accent3));transition:width .5s cubic-bezier(.22,.68,0,1.2)}
+.level-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;flex-wrap:wrap;gap:8px}
+.lv-badge{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.06em;background:linear-gradient(135deg,var(--accent),var(--accent3));color:#000;padding:3px 12px;border-radius:20px;margin-bottom:3px}
+.lv-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em}
+.lv-xp-big{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--accent);line-height:1}
+.lv-xp-label{font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.bar-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--muted2);margin-bottom:4px}
+.bar-track{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent3));transition:width .5s cubic-bezier(.22,.68,0,1.2)}
 
 /* DAILY */
-.daily-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:12px;position:relative;overflow:hidden}
+.daily-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:10px;position:relative;overflow:hidden}
 .daily-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
-.daily-top{display:flex;align-items:center;gap:16px;margin-bottom:.75rem}
-.daily-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;color:var(--accent2);min-width:90px;transition:color .3s}
+.daily-row{display:flex;align-items:center;gap:14px}
+.daily-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:1;color:var(--accent2);min-width:80px;transition:color .3s}
 .daily-num.hit{color:var(--gold)}
 .daily-info{flex:1}
-.daily-bar-track{height:12px;background:var(--bg3);border-radius:6px;overflow:hidden;margin-bottom:5px}
-.daily-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s cubic-bezier(.22,.68,0,1.2)}
-.daily-bar-fill.hit{background:linear-gradient(90deg,var(--gold),#ffe94e)}
-.daily-status{font-size:13px;color:var(--muted2)}
+.d-bar-track{height:10px;background:var(--bg3);border-radius:5px;overflow:hidden;margin-bottom:4px}
+.d-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s cubic-bezier(.22,.68,0,1.2)}
+.d-bar-fill.hit{background:linear-gradient(90deg,var(--gold),#ffe94e)}
+.daily-status{font-size:12px;color:var(--muted2)}
 .daily-status.hit{color:var(--gold);font-weight:500}
-.reset-btn{background:none;border:1px solid var(--border);color:var(--muted2);font-size:11px;font-family:'DM Sans',sans-serif;padding:5px 11px;border-radius:8px;cursor:pointer;transition:all .15s;white-space:nowrap;margin-left:auto}
+.reset-btn{background:none;border:1px solid var(--border);color:var(--muted2);font-size:11px;font-family:'DM Sans',sans-serif;padding:5px 11px;border-radius:8px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .reset-btn:hover{border-color:var(--accent2);color:var(--accent2)}
 
-/* SECTION TABS */
-.section-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
-.stab{padding:7px 16px;font-size:12px;font-weight:500;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;letter-spacing:.02em}
-.stab:hover{color:var(--text);border-color:var(--muted2)}
-.stab.active{border-color:transparent;font-weight:600}
-.stab[data-color="vocab"].active{background:var(--accent);color:#000}
-.stab[data-color="verbs"].active{background:var(--accent2);color:#fff}
-.stab[data-color="grammar"].active{background:var(--accent3);color:#000}
-.stab[data-color="culture"].active{background:var(--purple);color:#fff}
+/* STATS */
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem}
+.stat-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:.3rem}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;color:var(--accent3)}
+.stat-sub{font-size:11px;color:var(--muted2);margin-top:2px}
 
-.sec-panel{display:none}
-.sec-panel.active{display:block}
+/* TABS */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.tab{padding:7px 16px;font-size:12px;font-weight:500;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+.tab:hover{color:var(--text);border-color:var(--muted2)}
+.tab.active{border-color:transparent;font-weight:600}
+.tab[data-c="vocab"].active{background:var(--accent);color:#000}
+.tab[data-c="verbs"].active{background:var(--accent2);color:#fff}
+.tab[data-c="grammar"].active{background:var(--accent3);color:#000}
+.tab[data-c="culture"].active{background:var(--purple);color:#fff}
+.tab[data-c="levels"].active{background:var(--bg3);color:var(--text);border-color:var(--border)}
 
-/* CATEGORY HEADERS */
-.cat-header{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.08em;color:var(--muted2);margin:1.5rem 0 .6rem;padding-left:2px;display:flex;align-items:center;gap:8px}
-.cat-header span{height:1px;flex:1;background:var(--border)}
+.sec{display:none}.sec.active{display:block}
 
-/* CONCEPT ITEMS */
-.concept{display:flex;align-items:flex-start;gap:10px;padding:9px 13px;border-radius:10px;margin-bottom:5px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:all .15s;user-select:none}
-.concept:hover{border-color:rgba(200,255,62,.4);background:var(--bg3)}
-.concept.done{background:#0d1a03;border-color:#2a4510;opacity:.65}
-.concept.done .concept-name{text-decoration:line-through;color:var(--muted2)}
-.concept-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.concept.done .concept-box{background:var(--accent);border-color:var(--accent)}
-.concept-box svg{opacity:0;transition:opacity .1s;width:11px;height:11px}
-.concept.done .concept-box svg{opacity:1}
+/* CATEGORY LABEL */
+.cat-label{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.08em;color:var(--muted2);margin:1.4rem 0 .6rem;display:flex;align-items:center;gap:8px}
+.cat-label span{height:1px;flex:1;background:var(--border)}
+
+/* CONCEPT CARD — the trophy items */
+.concept{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:12px;margin-bottom:6px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:all .15s;user-select:none;position:relative}
+.concept:hover{border-color:rgba(200,255,62,.35);background:var(--bg3);transform:translateX(2px)}
+.concept.done{background:#0c1a03;border-color:#2a4810;opacity:.6;cursor:default}
+.concept.done:hover{transform:none}
+.concept-icon{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center;margin-top:1px}
 .concept-body{flex:1;min-width:0}
-.concept-name{font-size:13px;color:var(--text);line-height:1.4}
-.concept-hint{font-size:11px;color:var(--muted2);margin-top:2px;font-style:italic}
-.concept-meta{display:flex;align-items:center;gap:6px;margin-top:3px}
-.concept-xp{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--accent);letter-spacing:.04em}
-.concept.done .concept-xp{color:var(--muted)}
-.concept-phase{font-size:10px;color:var(--muted2);background:var(--bg3);padding:1px 6px;border-radius:8px;border:1px solid var(--border)}
+.concept-name{font-size:14px;font-weight:500;color:var(--text);line-height:1.3}
+.concept.done .concept-name{text-decoration:line-through;color:var(--muted2)}
+.concept-preview{font-size:11px;color:var(--muted2);margin-top:3px;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.concept-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.xp-badge{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--accent);letter-spacing:.04em}
+.concept[data-t="verb"] .xp-badge{color:var(--accent2)}
+.concept[data-t="grammar"] .xp-badge{color:var(--accent3)}
+.concept[data-t="culture"] .xp-badge{color:var(--purple)}
+.concept.done .xp-badge{color:var(--muted)}
+.phase-tag{font-size:10px;color:var(--muted2);background:var(--bg3);padding:1px 6px;border-radius:8px;border:1px solid var(--border)}
+.done-check{font-size:1rem}
 
-/* VERB items — red accent */
-.concept[data-type="verb"]:hover{border-color:rgba(255,92,62,.4)}
-.concept[data-type="verb"].done .concept-box{background:var(--accent2);border-color:var(--accent2)}
-.concept[data-type="verb"] .concept-xp{color:var(--accent2)}
-.concept[data-type="verb"].done .concept-xp{color:var(--muted)}
+/* LESSON MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:1rem;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:20px;width:100%;max-width:680px;margin:auto;position:relative;overflow:hidden}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.modal.vocab::before{background:linear-gradient(90deg,var(--accent),var(--accent3))}
+.modal.verb::before{background:linear-gradient(90deg,var(--accent2),var(--purple))}
+.modal.grammar::before{background:linear-gradient(90deg,var(--accent3),var(--accent))}
+.modal.culture::before{background:linear-gradient(90deg,var(--purple),var(--pink))}
 
-/* Grammar items — blue accent */
-.concept[data-type="grammar"]:hover{border-color:rgba(62,200,255,.4)}
-.concept[data-type="grammar"].done .concept-box{background:var(--accent3);border-color:var(--accent3)}
-.concept[data-type="grammar"] .concept-xp{color:var(--accent3)}
-.concept[data-type="grammar"].done .concept-xp{color:var(--muted)}
+.modal-head{padding:1.5rem 1.5rem 0}
+.modal-close{position:absolute;top:1rem;right:1rem;background:var(--bg3);border:1px solid var(--border);color:var(--muted2);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:'DM Sans',sans-serif}
+.modal-close:hover{color:var(--text);border-color:var(--text)}
+.modal-icon{font-size:2rem;margin-bottom:.5rem}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.04em;line-height:1;margin-bottom:.3rem}
+.modal-subtitle{font-size:12px;color:var(--muted2);margin-bottom:1rem}
+.modal-xp-pill{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.06em;padding:3px 12px;border-radius:20px;margin-bottom:1rem}
 
-/* Culture items — purple */
-.concept[data-type="culture"]:hover{border-color:rgba(185,124,255,.4)}
-.concept[data-type="culture"].done .concept-box{background:var(--purple);border-color:var(--purple)}
-.concept[data-type="culture"] .concept-xp{color:var(--purple)}
-.concept[data-type="culture"].done .concept-xp{color:var(--muted)}
+.modal-body{padding:0 1.5rem}
 
-/* LEVELS */
+/* WORD GRID */
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-bottom:1.5rem}
+.word-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;transition:all .15s}
+.word-card:hover{border-color:var(--accent);background:#0f1a03}
+.word-es{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px}
+.word-en{font-size:12px;color:var(--muted2)}
+.word-example{font-size:11px;color:var(--accent);margin-top:4px;font-style:italic}
+
+/* EXERCISE */
+.exercise-block{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+.ex-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-bottom:.8rem}
+.ex-question{font-size:15px;font-weight:500;color:var(--text);margin-bottom:.75rem;line-height:1.5}
+.ex-options{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:.5rem}
+.ex-opt{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;color:var(--text);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;text-align:left}
+.ex-opt:hover{border-color:var(--accent3);color:var(--accent3)}
+.ex-opt.correct{background:#0c1a03;border-color:var(--accent);color:var(--accent);pointer-events:none}
+.ex-opt.wrong{background:#1a0505;border-color:var(--accent2);color:var(--accent2);pointer-events:none}
+.ex-opt.reveal{background:#0c1a03;border-color:var(--accent);color:var(--accent);pointer-events:none}
+.ex-feedback{font-size:13px;margin-top:.5rem;min-height:20px;font-style:italic}
+.ex-feedback.good{color:var(--accent)}
+.ex-feedback.bad{color:var(--accent2)}
+
+.fill-input{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:14px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;margin-bottom:6px;transition:border .15s}
+.fill-input:focus{border-color:var(--accent3)}
+.fill-input.correct{border-color:var(--accent);background:#0c1a03;color:var(--accent)}
+.fill-input.wrong{border-color:var(--accent2);background:#1a0505}
+.check-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text);font-size:12px;font-family:'DM Sans',sans-serif;padding:6px 14px;border-radius:8px;cursor:pointer;transition:all .15s}
+.check-btn:hover{border-color:var(--accent3);color:var(--accent3)}
+
+/* SLAY BUTTON */
+.slay-wrap{padding:1.5rem;text-align:center;border-top:1px solid var(--border);margin-top:.5rem}
+.slay-btn{background:linear-gradient(135deg,var(--pink),var(--purple),var(--accent3));color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.1em;padding:16px 48px;border-radius:50px;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 30px rgba(255,110,180,.3)}
+.slay-btn:hover{transform:scale(1.04);box-shadow:0 6px 40px rgba(255,110,180,.5)}
+.slay-btn:active{transform:scale(.97)}
+.slay-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);pointer-events:none}
+.slay-sub{font-size:12px;color:var(--muted2);margin-top:.6rem;letter-spacing:.04em}
+
+/* SPARKLE ANIMATION */
+@keyframes sparkle{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0)}}
+.sparkle{position:fixed;pointer-events:none;font-size:1.4rem;animation:sparkle .9s ease-out forwards;z-index:999}
+
+/* CONJUGATION TABLE */
+.conj-table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:13px}
+.conj-table th{background:var(--bg3);color:var(--muted2);font-size:10px;text-transform:uppercase;letter-spacing:.07em;padding:6px 10px;text-align:left;font-weight:600;border-bottom:1px solid var(--border)}
+.conj-table td{padding:7px 10px;border-bottom:1px solid var(--border);color:var(--text)}
+.conj-table tr:last-child td{border-bottom:none}
+.conj-table td:first-child{color:var(--muted2);width:40%}
+.conj-table td:last-child{font-weight:500;color:var(--accent)}
+.conj-table.red td:last-child{color:var(--accent2)}
+.conj-table.blue td:last-child{color:var(--accent3)}
+
+/* PHRASE BLOCK */
+.phrase-block{background:var(--bg3);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px}
+.phrase-block.red{border-left-color:var(--accent2)}
+.phrase-block.blue{border-left-color:var(--accent3)}
+.phrase-block.purple{border-left-color:var(--purple)}
+.phrase-es{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px}
+.phrase-en{font-size:12px;color:var(--muted2)}
+.phrase-note{font-size:11px;color:var(--accent);margin-top:4px;font-style:italic}
+
+/* PROGRESS in modal */
+.modal-progress{padding:0 1.5rem;margin-bottom:.5rem}
+.mp-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.mp-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .3s}
+.mp-label{font-size:11px;color:var(--muted2);margin-bottom:4px}
+
+/* LEVELS PAGE */
 .lv-row{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);font-size:13px;margin-bottom:5px}
-.lv-row.here{border-color:var(--accent);background:#0d1a03}
+.lv-row.here{border-color:var(--accent);background:#0c1a03}
 .lv-row.past{opacity:.4}
 .lv-emoji{font-size:16px;width:24px;text-align:center;flex-shrink:0}
 .lv-name{flex:1;font-weight:500}
@@ -133,472 +190,1197 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .here-badge{font-size:10px;background:var(--accent);color:#000;padding:1px 8px;border-radius:8px;font-weight:700;letter-spacing:.04em}
 
 /* TOAST */
-.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120px);background:var(--accent);color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.06em;padding:10px 26px;border-radius:30px;z-index:1000;transition:transform .35s cubic-bezier(.22,.68,0,1.2);pointer-events:none;white-space:nowrap}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120px);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.06em;padding:10px 26px;border-radius:30px;z-index:1000;transition:transform .35s cubic-bezier(.22,.68,0,1.2);pointer-events:none;white-space:nowrap;color:#000}
 .toast.show{transform:translateX(-50%) translateY(0)}
+.toast.green{background:var(--accent)}
 .toast.gold{background:var(--gold)}
+.toast.pink{background:var(--pink);color:#fff}
 .toast.red{background:var(--accent2);color:#fff}
+.toast{max-width:88vw;text-align:center;padding:12px 22px;white-space:normal;line-height:1.35;font-size:1rem}
 
 /* XP POP */
-@keyframes xpPop{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-50px) scale(1.4)}}
-.xp-pop{position:fixed;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--accent);pointer-events:none;animation:xpPop .7s ease-out forwards;z-index:999;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+@keyframes xpPop{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-55px) scale(1.5)}}
+.xp-pop{position:fixed;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;pointer-events:none;animation:xpPop .75s ease-out forwards;z-index:998;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+
+@media(max-width:500px){
+  .ex-options{grid-template-columns:1fr}
+  .word-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
+>
 <div class="wrap">
+  <div class="hero">
+    <div style="font-size:4rem;line-height:1;margin-bottom:.4rem">🇪🇸</div>
+    <h1>EL MONSTRUO<br>DEL ESPAÑOL</h1>
+    <p>Open a lesson · Learn · Slay · Get XP</p>
+  </div>
 
-<div class="hero">
-  <span class="flag">🇪🇸</span>
-  <h1>EL MONSTRUO<br>DEL ESPAÑOL</h1>
-  <p>Check concepts as you learn them · 100 XP minimum per day</p>
-</div>
-
-<!-- LEVEL BAR -->
-<div class="top-grid">
   <div class="level-card">
     <div class="level-top">
-      <div class="level-left">
+      <div>
         <div class="lv-badge" id="lvBadge">LEVEL 1</div>
         <div class="lv-title" id="lvTitle">😴 El Dormido</div>
       </div>
       <div style="text-align:right">
-        <div class="lv-xp" id="totalXP">0</div>
+        <div class="lv-xp-big" id="totalXP">0</div>
         <div class="lv-xp-label">Total XP</div>
       </div>
     </div>
-    <div class="bar-wrap">
-      <div class="bar-meta"><span id="barFrom">0 XP</span><span id="barTo">500 XP to next level</span></div>
-      <div class="bar-track"><div class="bar-fill" id="lvBar" style="width:0%"></div></div>
+    <div class="bar-meta"><span id="barFrom">0 XP</span><span id="barTo">500 XP to next</span></div>
+    <div class="bar-track"><div class="bar-fill" id="lvBar" style="width:0%"></div></div>
+  </div>
+
+  <div class="daily-card">
+    <div class="daily-row">
+      <div class="daily-num" id="dailyNum">0</div>
+      <div class="daily-info">
+        <div class="d-bar-track"><div class="d-bar-fill" id="dBar" style="width:0%"></div></div>
+        <div class="daily-status" id="dStatus">Need 100 XP to close the day ✦</div>
+      </div>
+      <button class="reset-btn" onclick="resetDay()">Reset day</button>
     </div>
   </div>
-</div>
 
-<!-- DAILY XP -->
-<div class="daily-card">
-  <div class="daily-top">
-    <div class="daily-num" id="dailyNum">0</div>
-    <div class="daily-info">
-      <div class="daily-bar-track"><div class="daily-bar-fill" id="dailyBar" style="width:0%"></div></div>
-      <div class="daily-status" id="dailyStatus">Need 100 XP to close the day ✦</div>
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-label">🔥 Streak</div>
+      <div class="stat-num" id="streakN">0</div>
+      <div class="stat-sub">days in a row</div>
     </div>
-    <button class="reset-btn" onclick="resetDay()">Reset day</button>
+    <div class="stat-box">
+      <div class="stat-label">✅ 100XP days</div>
+      <div class="stat-num" id="daysN" style="color:var(--accent)">0</div>
+      <div class="stat-sub">goal days hit</div>
+    </div>
+  </div>
+
+  <div class="daily-card" style="padding-top:1.25rem">
+    <div class="tabs" id="tabRow"></div>
+    <div id="secVocab" class="sec active"></div>
+    <div id="secVerbs" class="sec"></div>
+    <div id="secGrammar" class="sec"></div>
+    <div id="secCulture" class="sec"></div>
+    <div id="secLevels" class="sec"></div>
   </div>
 </div>
 
-<!-- STATS -->
-<div class="top-grid" style="margin-bottom:1rem">
-  <div class="card green">
-    <div class="card-label">🔥 Day streak</div>
-    <div class="card-big" id="streakN">0</div>
-    <div class="card-sub">days in a row</div>
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-head">
+      <div class="modal-icon" id="mIcon"></div>
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-subtitle" id="mSub"></div>
+      <div class="modal-xp-pill" id="mXpPill"></div>
+    </div>
+    <div class="modal-progress">
+      <div class="mp-label" id="mpLabel">Scroll through the lesson</div>
+      <div class="mp-track"><div class="mp-fill" id="mpFill" style="width:0%"></div></div>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+    <div class="slay-wrap" id="slayWrap">
+      <button class="slay-btn" id="slayBtn" onclick="slay()">✨ SLAAAAAAAY ✨</button>
+      <div class="slay-sub" id="slaySub"></div>
+    </div>
   </div>
-  <div class="card blue">
-    <div class="card-label">✅ 100 XP days</div>
-    <div class="card-big blue" id="daysHitN">0</div>
-    <div class="card-sub">goal days hit</div>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="daily-card" style="padding-top:1.25rem">
-  <div class="section-tabs">
-    <button class="stab active" data-color="vocab" onclick="switchSec('vocab',this)">📖 Vocabulaire</button>
-    <button class="stab" data-color="verbs" onclick="switchSec('verbs',this)">⚡ Verbes</button>
-    <button class="stab" data-color="grammar" onclick="switchSec('grammar',this)">⚙️ Grammaire</button>
-    <button class="stab" data-color="culture" onclick="switchSec('culture',this)">🌍 Culture & Set</button>
-    <button class="stab" data-color="vocab" onclick="switchSec('levels',this)" style="">🏆 Levels</button>
-  </div>
-
-  <!-- VOCAB -->
-  <div class="sec-panel active" id="sec_vocab"></div>
-  <!-- VERBS -->
-  <div class="sec-panel" id="sec_verbs"></div>
-  <!-- GRAMMAR -->
-  <div class="sec-panel" id="sec_grammar"></div>
-  <!-- CULTURE -->
-  <div class="sec-panel" id="sec_culture"></div>
-  <!-- LEVELS -->
-  <div class="sec-panel" id="sec_levels"></div>
-</div>
-
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-
+// ════════════════════════════════════════════════════════════
+// LEVELS
+// ════════════════════════════════════════════════════════════
 const LEVELS=[
-  {n:1,e:'😴',title:'El Dormido',xp:0},
-  {n:2,e:'👶',title:'El Bebé',xp:500},
-  {n:3,e:'🚶',title:'El Caminante',xp:1500},
-  {n:4,e:'💬',title:'El Conversador',xp:3000},
-  {n:5,e:'📺',title:'El Espectador',xp:5000},
-  {n:6,e:'🎯',title:'El Preciso',xp:8000},
-  {n:7,e:'🔥',title:'El Encendido',xp:12000},
-  {n:8,e:'🎬',title:'El del Set',xp:17000},
-  {n:9,e:'🗣️',title:'El Fluido',xp:23000},
-  {n:10,e:'👑',title:'La Monstrua',xp:30000}
+  {n:1,e:'😴',t:'El Dormido',xp:0},
+  {n:2,e:'👶',t:'El Bebé',xp:500},
+  {n:3,e:'🚶',t:'El Caminante',xp:1500},
+  {n:4,e:'💬',t:'El Conversador',xp:3000},
+  {n:5,e:'📺',t:'El Espectador',xp:5000},
+  {n:6,e:'🎯',t:'El Preciso',xp:8000},
+  {n:7,e:'🔥',t:'El Encendido',xp:12000},
+  {n:8,e:'🎬',t:'El del Set',xp:17000},
+  {n:9,e:'🗣️',t:'El Fluido',xp:23000},
+  {n:10,e:'👑',t:'La Monstrua',xp:30000}
 ];
 
-// type: vocab | verb | grammar | culture
-// phase: 1 | 2 | 3
-// permanent: true = milestone (can't uncheck), false = daily task
+// ════════════════════════════════════════════════════════════
+// LESSON DATA
+// Each lesson has: id, name, icon, type, xp, phase, preview,
+// words[] and/or phrases[], conjugation{}, exercises[]
+// ════════════════════════════════════════════════════════════
+const LESSONS = [
 
-const VOCAB_DATA=[
-  {cat:'🗺️ Directions & places',items:[
-    {id:'v_directions',name:'Directions',hint:'izquierda, derecha, recto, arriba, abajo, cruzar, girar, seguir',xp:15,phase:1},
-    {id:'v_city',name:'City places',hint:'calle, plaza, semáforo, esquina, puente, barrio, mercado, aeropuerto',xp:15,phase:1},
-    {id:'v_transport',name:'Transport',hint:'autobús, tren, metro, taxi, avión, bicicleta, moto, coche',xp:15,phase:1},
-    {id:'v_prepositions',name:'Prepositions of place',hint:'en, sobre, debajo, delante, detrás, entre, cerca, lejos, al lado de',xp:20,phase:1},
-  ]},
-  {cat:'🏠 Home & daily life',items:[
-    {id:'v_home',name:'Rooms of the house',hint:'cocina, dormitorio, baño, salón, comedor, balcón, pasillo',xp:10,phase:1},
-    {id:'v_furniture',name:'Furniture & objects',hint:'mesa, silla, cama, sofá, armario, espejo, estantería, lámpara',xp:10,phase:1},
-    {id:'v_kitchen',name:'Kitchen utensils',hint:'cuchillo, tenedor, cuchara, sartén, olla, vaso, plato, taza, colador',xp:15,phase:1},
-    {id:'v_food',name:'Food & meals',hint:'desayuno, almuerzo, cena, carne, verdura, fruta, pan, arroz, aceite',xp:15,phase:1},
-    {id:'v_drinks',name:'Drinks',hint:'agua, café, té, zumo, leche, cerveza, vino, refresco',xp:10,phase:1},
-    {id:'v_clothing',name:'Clothing',hint:'camiseta, pantalón, chaqueta, zapatos, calcetines, gorra, vestido',xp:10,phase:1},
-  ]},
-  {cat:'💪 Body & training',items:[
-    {id:'v_body',name:'Body parts — full',hint:'cabeza, cuello, hombro, codo, muñeca, cadera, rodilla, tobillo, talón',xp:25,phase:1},
-    {id:'v_muscles',name:'Muscles & anatomy',hint:'bíceps, tríceps, espalda, pecho, abdomen, glúteo, cuádriceps, tendón',xp:20,phase:1},
-    {id:'v_movement',name:'Movement verbs',hint:'correr, saltar, caer, rodar, girar, empujar, agarrar, esquivar, lanzar',xp:20,phase:1},
-    {id:'v_injuries',name:'Injuries & pain',hint:'dolor, lesión, esguince, fractura, inflamación, tendinitis, rodilla, hombro',xp:15,phase:1},
-    {id:'v_gym',name:'Gym vocabulary',hint:'pesas, barra, mancuerna, máquina, serie, repetición, calentamiento, estirar',xp:15,phase:1},
-  ]},
-  {cat:'😊 Emotions & personality',items:[
-    {id:'v_emotions',name:'Emotions',hint:'feliz, triste, enfadado, asustado, sorprendido, orgulloso, cansado, emocionado',xp:15,phase:1},
-    {id:'v_personality',name:'Personality traits',hint:'valiente, fuerte, paciente, ambiciosa, disciplinada, creativa, terca',xp:15,phase:2},
-    {id:'v_mental',name:'Mental states',hint:'estresada, motivada, concentrada, bloqueada, en forma, agotada, lista',xp:10,phase:1},
-  ]},
-  {cat:'🎬 Film & production',items:[
-    {id:'v_onset',name:'On-set basics',hint:'acción, corten, escena, toma, plano, encuadre, rodaje, ensayo, silencio',xp:20,phase:1},
-    {id:'v_stunt',name:'Stunt vocabulary',hint:'doble de riesgo, coordinador de especialistas, arnés, cable, coreografía, colchoneta',xp:20,phase:1},
-    {id:'v_crew',name:'Crew roles',hint:'director, asistente de dirección, cámara, productor, guionista, maquillaje',xp:15,phase:2},
-    {id:'v_camera',name:'Camera & framing',hint:'primer plano, plano general, contrapicado, travelling, zoom, enfoque',xp:15,phase:2},
-  ]},
-  {cat:'🌡️ Time, weather & nature',items:[
-    {id:'v_time',name:'Time expressions',hint:'ahora, luego, antes, después, siempre, nunca, a veces, ya, todavía, enseguida',xp:15,phase:1},
-    {id:'v_weather',name:'Weather',hint:'sol, lluvia, viento, niebla, nieve, calor, frío, nublado, tormenta',xp:10,phase:1},
-    {id:'v_numbers',name:'Numbers 1–1000 + ordinals',hint:'primero, segundo, tercero, décimo, vigésimo, centésimo',xp:15,phase:1},
-    {id:'v_dates',name:'Days, months, seasons',hint:'lunes…domingo, enero…diciembre, primavera, verano, otoño, invierno',xp:10,phase:1},
-  ]},
-  {cat:'💬 Social & conversation',items:[
-    {id:'v_greetings',name:'Greetings & farewells',hint:'hola, buenas, ¿qué tal?, hasta luego, nos vemos, cuídate, buen provecho',xp:10,phase:1},
-    {id:'v_opinions',name:'Giving opinions',hint:'creo que, en mi opinión, me parece, estoy de acuerdo, no creo que',xp:15,phase:2},
-    {id:'v_filler',name:'Filler words & discourse markers',hint:'pues, bueno, o sea, es que, claro, venga, vale, a ver, ¿no?',xp:20,phase:2},
-    {id:'v_slang',name:'Spanish slang — 20 expressions',hint:'guay, tío/tía, flipar, mola, currar, mogollón, liarse, pillar, tener morro',xp:25,phase:2},
-    {id:'v_morocco',name:'Talk about Morocco in Spanish',hint:'Marruecos, Rabat, Salé, amazigh, desierto, mezquita, medina, couscous',xp:20,phase:2},
-  ]},
-  {cat:'✈️ Travel & Canada',items:[
-    {id:'v_travel',name:'Travel vocabulary',hint:'pasaporte, visado, aduana, maleta, vuelo, hotel, alojamiento, reserva',xp:15,phase:1},
-    {id:'v_canada',name:'Talk about Canada in Spanish',hint:'Canadá, Toronto, permiso de trabajo, inmigración, clima, multiculturalismo',xp:15,phase:2},
-    {id:'v_work',name:'Work & career vocabulary',hint:'trabajo, contrato, salario, jornada, huelga, experiencia, currículum, entrevista',xp:15,phase:2},
-  ]}
+// ───────────── VOCABULAIRE ─────────────
+{sec:'vocab', cat:'🗺️ Directions & places', id:'directions', icon:'🗺️', name:'Directions', type:'vocab', xp:15, phase:1,
+ preview:'izquierda, derecha, recto, arriba, abajo...',
+ words:[
+  {es:'izquierda',en:'left',ex:'Gira a la izquierda — Turn left'},
+  {es:'derecha',en:'right',ex:'A la derecha — To the right'},
+  {es:'recto / todo recto',en:'straight ahead',ex:'Sigue recto — Keep going straight'},
+  {es:'arriba',en:'up / upstairs',ex:'Vive arriba — She lives upstairs'},
+  {es:'abajo',en:'down / downstairs',ex:'El gym está abajo — The gym is downstairs'},
+  {es:'cruzar',en:'to cross',ex:'Cruza la calle — Cross the street'},
+  {es:'girar',en:'to turn',ex:'Gira aquí — Turn here'},
+  {es:'seguir',en:'to continue / follow',ex:'Sigue esta calle — Follow this street'},
+  {es:'cerca',en:'nearby / close',ex:'¿Está cerca? — Is it nearby?'},
+  {es:'lejos',en:'far',ex:'Está un poco lejos — It\'s a bit far'},
+  {es:'al lado de',en:'next to',ex:'Al lado del mercado — Next to the market'},
+  {es:'enfrente de',en:'in front of / opposite',ex:'Enfrente del banco — Opposite the bank'},
+ ],
+ exercises:[
+  {type:'mcq',q:'How do you say "Turn left" in Spanish?',opts:['Gira a la derecha','Gira a la izquierda','Sigue recto','Cruza aquí'],ans:1,fb:'¡Exacto! Izquierda = left, derecha = right.'},
+  {type:'mcq',q:'What does "Sigue recto" mean?',opts:['Turn around','Go left','Keep going straight','Stop here'],ans:2,fb:'Recto = straight. Easy to remember — think "rectangle" (straight shape).'},
+  {type:'fill',q:'Complete: "Está _____ del mercado" (next to the market)',ans:'al lado',fb:'Al lado de = next to. Super useful phrase.'},
+  {type:'mcq',q:'¿Qué significa "lejos"?',opts:['nearby','left','far','straight'],ans:2,fb:'Lejos = far. Cerca = nearby. Opposites!'},
+  {type:'fill',q:'How do you say "Cross the street"? → _____ la calle',ans:'cruza',fb:'Cruzar → cruza (command form). You\'ll hear this constantly giving directions.'},
+ ]},
+
+{sec:'vocab', cat:'🗺️ Directions & places', id:'city_places', icon:'🏙️', name:'City places', type:'vocab', xp:15, phase:1,
+ preview:'calle, plaza, semáforo, esquina, barrio...',
+ words:[
+  {es:'la calle',en:'the street',ex:'Dobla en esta calle — Turn on this street'},
+  {es:'la plaza',en:'the square / plaza',ex:'Nos vemos en la plaza — See you at the square'},
+  {es:'el semáforo',en:'the traffic light',ex:'Para en el semáforo — Stop at the traffic light'},
+  {es:'la esquina',en:'the corner',ex:'En la esquina — On the corner'},
+  {es:'el puente',en:'the bridge',ex:'Cruza el puente — Cross the bridge'},
+  {es:'el barrio',en:'the neighbourhood',ex:'Mi barrio es tranquilo — My neighbourhood is quiet'},
+  {es:'el mercado',en:'the market',ex:'El mercado está cerca — The market is close'},
+  {es:'el aeropuerto',en:'the airport',ex:'El aeropuerto de Rabat — Rabat airport'},
+  {es:'la estación',en:'the station',ex:'La estación de tren — The train station'},
+  {es:'el supermercado',en:'the supermarket',ex:'¿Hay un supermercado aquí? — Is there a supermarket here?'},
+ ],
+ exercises:[
+  {type:'mcq',q:'What is "el semáforo"?',opts:['the bridge','the street','the traffic light','the corner'],ans:2,fb:'Semáforo! One of those words you just have to memorise. Red/orange/green — semáforo.'},
+  {type:'fill',q:'Complete: "En la _____" (on the corner)',ans:'esquina',fb:'Esquina = corner. "En la esquina" is one of the most useful direction phrases.'},
+  {type:'mcq',q:'¿Cómo se dice "the bridge" en español?',opts:['la plaza','el barrio','la esquina','el puente'],ans:3,fb:'El puente! Think of the famous Puente Nuevo in Ronda.'},
+  {type:'fill',q:'How do you say "the neighbourhood"?',ans:'el barrio',fb:'El barrio — you might know this from "In the Heights"! Same word.'},
+ ]},
+
+{sec:'vocab', cat:'🏠 Home & daily life', id:'kitchen', icon:'🍳', name:'Kitchen utensils', type:'vocab', xp:15, phase:1,
+ preview:'cuchillo, tenedor, sartén, olla, colador...',
+ words:[
+  {es:'el cuchillo',en:'the knife',ex:'El cuchillo está sucio — The knife is dirty'},
+  {es:'el tenedor',en:'the fork',ex:'¿Me pasas el tenedor? — Can you pass me the fork?'},
+  {es:'la cuchara',en:'the spoon',ex:'Necesito una cuchara — I need a spoon'},
+  {es:'la cucharilla',en:'the teaspoon',ex:'Una cucharilla de café — A coffee teaspoon'},
+  {es:'la sartén',en:'the frying pan',ex:'Calienta la sartén — Heat up the pan'},
+  {es:'la olla',en:'the pot / saucepan',ex:'Pon agua en la olla — Put water in the pot'},
+  {es:'el vaso',en:'the glass',ex:'Un vaso de agua — A glass of water'},
+  {es:'la taza',en:'the cup / mug',ex:'Una taza de café — A cup of coffee'},
+  {es:'el plato',en:'the plate',ex:'Pon los platos en la mesa — Put the plates on the table'},
+  {es:'el colador',en:'the colander / strainer',ex:'Usa el colador para la pasta — Use the colander for pasta'},
+  {es:'la tabla de cortar',en:'the chopping board',ex:'Corta en la tabla — Cut on the chopping board'},
+  {es:'el cuenco',en:'the bowl',ex:'Un cuenco de arroz — A bowl of rice'},
+ ],
+ exercises:[
+  {type:'mcq',q:'How do you say "the frying pan"?',opts:['la olla','la sartén','el cuenco','el colador'],ans:1,fb:'La sartén! Key distinction: sartén = frying pan, olla = pot/saucepan.'},
+  {type:'fill',q:'Complete: "Un _____ de agua" (a glass of water)',ans:'vaso',fb:'Vaso = glass (for drinking). Taza = cup/mug. Different shapes, different words.'},
+  {type:'mcq',q:'What is "el colador"?',opts:['the knife','the bowl','the colander/strainer','the plate'],ans:2,fb:'El colador — for draining pasta, washing vegetables. That hole-y thing.'},
+  {type:'fill',q:'How do you say "the spoon"?',ans:'la cuchara',fb:'Cuchara = spoon. Cucharilla = teaspoon. Cuchillo = knife. All start with "cuch"!'},
+ ]},
+
+{sec:'vocab', cat:'💪 Body & training', id:'body_parts', icon:'💪', name:'Body parts — full', type:'vocab', xp:25, phase:1,
+ preview:'cabeza, cuello, hombro, codo, rodilla, tobillo...',
+ words:[
+  {es:'la cabeza',en:'the head',ex:'Me duele la cabeza — I have a headache'},
+  {es:'el cuello',en:'the neck',ex:'Tengo el cuello tenso — My neck is tense'},
+  {es:'el hombro',en:'the shoulder',ex:'Mi hombro derecho — My right shoulder'},
+  {es:'el codo',en:'the elbow',ex:'Dobla el codo — Bend your elbow'},
+  {es:'la muñeca',en:'the wrist',ex:'Gira la muñeca — Rotate your wrist'},
+  {es:'la mano / los dedos',en:'the hand / the fingers',ex:'Agarra con la mano — Grab with your hand'},
+  {es:'la cadera',en:'the hip',ex:'Inclina la cadera — Tilt your hip'},
+  {es:'la rodilla',en:'the knee',ex:'Me duele la rodilla — My knee hurts'},
+  {es:'el tobillo',en:'the ankle',ex:'Torcí el tobillo — I twisted my ankle'},
+  {es:'el talón',en:'the heel',ex:'Apoya el talón — Rest your heel'},
+  {es:'la espalda',en:'the back',ex:'Espalda recta — Straight back'},
+  {es:'el pecho',en:'the chest',ex:'Abre el pecho — Open your chest'},
+  {es:'el abdomen / el core',en:'the abdomen / core',ex:'Activa el core — Engage your core'},
+  {es:'el muslo',en:'the thigh',ex:'Duele el muslo — My thigh hurts'},
+  {es:'la pantorrilla',en:'the calf',ex:'Estira la pantorrilla — Stretch your calf'},
+ ],
+ exercises:[
+  {type:'mcq',q:'A stunt coordinator says "Dobla el codo". What do they want?',opts:['Bend your knee','Bend your elbow','Rotate your wrist','Lower your shoulder'],ans:1,fb:'Codo = elbow. Rodilla = knee. Don\'t mix these up on set!'},
+  {type:'fill',q:'Complete: "Me duele la _____" (my knee hurts)',ans:'rodilla',fb:'Rodilla = knee. You know this one personally 😅'},
+  {type:'mcq',q:'How do you say "my right shoulder"?',opts:['mi hombro izquierdo','mi rodilla derecha','mi hombro derecho','mi codo derecho'],ans:2,fb:'Hombro = shoulder, derecho = right. Left = izquierdo.'},
+  {type:'fill',q:'What is "la muñeca"?',ans:'the wrist',fb:'Muñeca = wrist (also means "doll" — same word, different context!). Rotate las muñecas before every stunt session.'},
+  {type:'mcq',q:'"Activa el core" means:',opts:['Activate your legs','Engage your core','Bend your back','Open your chest'],ans:1,fb:'Core is the same in Spanish! Just say it with a Spanish accent.'},
+ ]},
+
+{sec:'vocab', cat:'💪 Body & training', id:'movement_verbs', icon:'🏃', name:'Movement verbs', type:'vocab', xp:20, phase:1,
+ preview:'correr, saltar, caer, rodar, girar, esquivar...',
+ words:[
+  {es:'correr',en:'to run',ex:'Corre hacia la cámara — Run toward the camera'},
+  {es:'saltar',en:'to jump',ex:'Salta sobre la mesa — Jump over the table'},
+  {es:'caer / caerse',en:'to fall',ex:'Cae hacia la izquierda — Fall to the left'},
+  {es:'rodar',en:'to roll',ex:'Rueda por el suelo — Roll across the floor'},
+  {es:'girar',en:'to turn / spin',ex:'Gira y mira a cámara — Turn and look at camera'},
+  {es:'empujar',en:'to push',ex:'Te empujo y caes — I push you and you fall'},
+  {es:'agarrar / sujetarse',en:'to grab / hold on',ex:'Agárrate al cable — Grab the cable'},
+  {es:'esquivar',en:'to dodge / avoid',ex:'Esquiva el golpe — Dodge the punch'},
+  {es:'lanzar',en:'to throw / launch',ex:'Te lanzan por el aire — They launch you through the air'},
+  {es:'aterrizar',en:'to land',ex:'Aterriza con las rodillas suaves — Land with soft knees'},
+  {es:'arrastrarse',en:'to crawl / drag yourself',ex:'Arrástate hacia la puerta — Crawl toward the door'},
+  {es:'agacharse',en:'to crouch / duck',ex:'Agáchate rápido — Duck quickly'},
+ ],
+ exercises:[
+  {type:'mcq',q:'"Esquiva el golpe" means:',opts:['Block the punch','Throw the punch','Dodge the punch','Take the punch'],ans:2,fb:'Esquivar = to dodge. Essential stunt vocabulary!'},
+  {type:'fill',q:'Complete: "Rueda por el _____" (roll across the floor)',ans:'suelo',fb:'Suelo = floor/ground. Rodar = to roll. Rueda = rolls (command).'},
+  {type:'mcq',q:'How do you say "land with soft knees"?',opts:['Salta con las rodillas','Aterriza con las rodillas suaves','Cae con los pies','Agáchate rápido'],ans:1,fb:'Aterrizar = to land. Suave = soft/gentle. Critical stunt instruction.'},
+  {type:'fill',q:'Complete: "_____ hacia la cámara" (run toward the camera)',ans:'corre',fb:'Corre = run (command from correr). You\'ll hear "¡Corre!" constantly on set.'},
+ ]},
+
+{sec:'vocab', cat:'😊 Emotions & personality', id:'emotions', icon:'😊', name:'Emotions', type:'vocab', xp:15, phase:1,
+ preview:'feliz, triste, enfadada, asustada, orgullosa...',
+ words:[
+  {es:'feliz / contenta',en:'happy',ex:'Estoy muy feliz — I\'m very happy'},
+  {es:'triste',en:'sad',ex:'Estoy un poco triste — I\'m a little sad'},
+  {es:'enfadada / enojada',en:'angry',ex:'Estoy enfadada — I\'m angry'},
+  {es:'asustada',en:'scared / frightened',ex:'¡Estoy asustada! — I\'m scared!'},
+  {es:'sorprendida',en:'surprised',ex:'Estoy sorprendida — I\'m surprised'},
+  {es:'orgullosa',en:'proud',ex:'Estoy muy orgullosa de mí — I\'m very proud of myself'},
+  {es:'cansada / agotada',en:'tired / exhausted',ex:'Estoy agotada después del entreno — I\'m exhausted after training'},
+  {es:'emocionada',en:'excited',ex:'Estoy muy emocionada — I\'m very excited'},
+  {es:'nerviosa',en:'nervous',ex:'Estoy nerviosa antes del rodaje — I\'m nervous before the shoot'},
+  {es:'motivada',en:'motivated',ex:'Hoy estoy muy motivada — Today I\'m very motivated'},
+  {es:'frustrada',en:'frustrated',ex:'Estoy frustrada con mi rodilla — I\'m frustrated with my knee'},
+  {es:'tranquila',en:'calm',ex:'Respira, mantente tranquila — Breathe, stay calm'},
+ ],
+ exercises:[
+  {type:'mcq',q:'"Estoy agotada" means:',opts:['I\'m angry','I\'m scared','I\'m exhausted','I\'m proud'],ans:2,fb:'Agotada = exhausted. Cansada = just tired. Agotada is stronger.'},
+  {type:'fill',q:'Complete: "Estoy muy _____ de mí" (I\'m very proud of myself)',ans:'orgullosa',fb:'Orgullosa = proud (feminine). Orgulloso = masculine. You\'ll be saying this a lot when you nail stunts 🏆'},
+  {type:'mcq',q:'How do you say "I\'m nervous before the shoot"?',opts:['Estoy feliz antes del rodaje','Estoy nerviosa antes del rodaje','Estoy cansada después del rodaje','Estoy emocionada después'],ans:1,fb:'Nerviosa = nervous. Antes = before. Rodaje = shoot/filming. Perfect sentence!'},
+  {type:'fill',q:'How do you say "I\'m very excited"?',ans:'estoy muy emocionada',fb:'Emocionada = excited (not emotional — false friend!). "Estoy muy emocionada" is your go-to.'},
+ ]},
+
+{sec:'vocab', cat:'🎬 Film & production', id:'onset_vocab', icon:'🎬', name:'On-set basics', type:'vocab', xp:20, phase:1,
+ preview:'acción, corten, escena, toma, plano, rodaje...',
+ words:[
+  {es:'¡Acción!',en:'Action!',ex:'¡Acción! — and you go'},
+  {es:'¡Corten!',en:'Cut!',ex:'¡Corten! — and you stop'},
+  {es:'la escena',en:'the scene',ex:'Esta escena es muy difícil — This scene is very difficult'},
+  {es:'la toma',en:'the take',ex:'Toma número tres — Take number three'},
+  {es:'el plano',en:'the shot / the shot type',ex:'¿Qué plano es? — What shot is it?'},
+  {es:'el encuadre',en:'the framing',ex:'Cuida el encuadre — Watch your framing'},
+  {es:'el rodaje',en:'the shoot / filming',ex:'El rodaje empieza mañana — The shoot starts tomorrow'},
+  {es:'el ensayo',en:'the rehearsal',ex:'Vamos a hacer un ensayo — Let\'s do a rehearsal'},
+  {es:'el silencio',en:'silence / quiet',ex:'¡Silencio en el set! — Quiet on set!'},
+  {es:'desde el principio',en:'from the top',ex:'Desde el principio — From the top'},
+  {es:'una toma más',en:'one more take',ex:'Una toma más, por favor — One more take please'},
+  {es:'¿Estamos listos?',en:'Are we ready?',ex:'¿Estamos listos? ¡Acción! — Are we ready? Action!'},
+ ],
+ exercises:[
+  {type:'mcq',q:'The director says "¡Corten!" — what do you do?',opts:['Start moving','Speed up','Stop immediately','Look at camera'],ans:2,fb:'¡Corten! = Cut! You stop everything. The most important word on set.'},
+  {type:'fill',q:'Complete: "_____ en el set!" (Quiet on set!)',ans:'silencio',fb:'¡Silencio en el set! You\'ll hear this before every single take.'},
+  {type:'mcq',q:'What does "una toma más" mean?',opts:['One more scene','One more rehearsal','One more take','One more day'],ans:2,fb:'Una toma más — the three words every stunt performer both loves and dreads 😅'},
+  {type:'fill',q:'Complete: "El _____ empieza mañana" (the shoot starts tomorrow)',ans:'rodaje',fb:'Rodaje = shoot/filming. Know this word — you\'ll use it constantly.'},
+ ]},
+
+{sec:'vocab', cat:'🎬 Film & production', id:'stunt_vocab', icon:'🥋', name:'Stunt vocabulary', type:'vocab', xp:20, phase:1,
+ preview:'doble de riesgo, arnés, coreografía, colchoneta...',
+ words:[
+  {es:'el doble de riesgo',en:'the stunt double',ex:'Soy la doble de riesgo — I\'m the stunt double'},
+  {es:'el/la coordinador/a de especialistas',en:'the stunt coordinator',ex:'El coordinador de especialistas aprueba todo — The stunt coordinator approves everything'},
+  {es:'el arnés',en:'the harness',ex:'Ponme el arnés — Put the harness on me'},
+  {es:'el cable',en:'the cable / wire',ex:'El cable está enganchado — The cable is attached'},
+  {es:'la coreografía',en:'the choreography',ex:'Aprendemos la coreografía — We learn the choreography'},
+  {es:'la colchoneta',en:'the mat / crash mat',ex:'Necesito la colchoneta — I need the mat'},
+  {es:'la caída controlada',en:'the controlled fall',ex:'Es una caída controlada — It\'s a controlled fall'},
+  {es:'el marcaje',en:'the blocking / mark',ex:'Hacemos el marcaje primero — We do the blocking first'},
+  {es:'la zona de seguridad',en:'the safety zone',ex:'Respeta la zona de seguridad — Respect the safety zone'},
+  {es:'el especialista',en:'the stunt performer',ex:'Los especialistas se preparan — The stunt performers are preparing'},
+  {es:'la voltereta',en:'the somersault / tumble',ex:'Una voltereta hacia adelante — A forward somersault'},
+  {es:'el salto de fe',en:'the leap of faith',ex:'Es un salto de fe — It\'s a leap of faith'},
+ ],
+ exercises:[
+  {type:'fill',q:'Complete: "Soy la _____ de riesgo" (I\'m the stunt double)',ans:'doble',fb:'Doble de riesgo = stunt double. This is literally your job title. Memorise it.'},
+  {type:'mcq',q:'What is "la colchoneta"?',opts:['the harness','the wire','the crash mat','the blocking'],ans:2,fb:'La colchoneta = the mat/crash mat. Your best friend on set.'},
+  {type:'mcq',q:'"El marcaje" refers to:',opts:['the choreography','the blocking/marks','the safety zone','the fall'],ans:1,fb:'El marcaje = the blocking. Where you stand, where you move. AD vocabulary you already know — now in Spanish!'},
+  {type:'fill',q:'How do you say "We learn the choreography"?',ans:'aprendemos la coreografía',fb:'Aprendemos = we learn (present tense of aprender). La coreografía is the same word!'},
+ ]},
+
+// ───────────── VERBES ─────────────
+{sec:'verbs', cat:'🟢 Present tense (Presente)', id:'present_ar', icon:'🟢', name:'Present: regular -AR verbs', type:'verb', xp:20, phase:1,
+ preview:'hablar → hablo, hablas, habla...',
+ phrases:[
+  {es:'Hablo español todos los días',en:'I speak Spanish every day',note:'yo → hablo'},
+  {es:'¿Hablas árabe?',en:'Do you speak Arabic?',note:'tú → hablas'},
+  {es:'Ella entrena mucho',en:'She trains a lot',note:'ella → entrena'},
+  {es:'Nos preparamos para Canadá',en:'We\'re preparing for Canada',note:'nosotros → preparamos'},
+  {es:'Trabajan en Netflix',en:'They work at Netflix',note:'ellos → trabajan'},
+ ],
+ conjugation:{verb:'HABLAR',color:'',rows:[
+  ['yo','hablo'],['tú','hablas'],['él/ella','habla'],['nosotros','hablamos'],['vosotros','habláis'],['ellos/ellas','hablan']
+ ]},
+ exercises:[
+  {type:'mcq',q:'¿Cómo se conjuga HABLAR con "yo"?',opts:['hablas','hablan','hablo','hablamos'],ans:2,fb:'Yo → hablo. Drop -AR, add -o. Simple!'},
+  {type:'fill',q:'Conjuga TRABAJAR con "ella": ella _____',ans:'trabaja',fb:'Trabajar → trabaja. Same pattern: drop -AR, add -a for él/ella.'},
+  {type:'mcq',q:'"Entrenamos mucho" means:',opts:['I train a lot','She trains a lot','We train a lot','They train a lot'],ans:2,fb:'Nosotros → -amos. We train a lot. That\'s you and your training partners!'},
+  {type:'fill',q:'Conjuga ESCUCHAR con "tú": tú _____',ans:'escuchas',fb:'Escuchar → escuchas. -AR + tú = -as. You\'re getting it!'},
+ ]},
+
+{sec:'verbs', cat:'🟢 Present tense (Presente)', id:'ser_vs_estar', icon:'⚡', name:'SER vs ESTAR — fully understood', type:'verb', xp:40, phase:1,
+ preview:'Soy cansada (siempre) vs Estoy cansada (ahora)',
+ phrases:[
+  {es:'Soy marroquí, soy actriz, soy valiente',en:'I am Moroccan, I am an actress, I am brave',note:'SER = permanent identity'},
+  {es:'Estoy en el gym, estoy cansada, estoy lista',en:'I am at the gym, I am tired, I am ready',note:'ESTAR = location, current state'},
+  {es:'El set es grande / El set está lleno',en:'The set is big / The set is full',note:'SER = characteristic, ESTAR = current condition'},
+  {es:'Soy coordinadora de especialistas',en:'I am a stunt coordinator',note:'SER = profession (your future title 🏆)'},
+  {es:'¿Estás bien? Estoy perfecta',en:'Are you OK? I\'m perfect',note:'ESTAR = how you\'re feeling right now'},
+ ],
+ conjugation:{verb:'SER vs ESTAR',color:'blue',rows:[
+  ['yo','soy / estoy'],['tú','eres / estás'],['él/ella','es / está'],['nosotros','somos / estamos'],['vosotros','sois / estáis'],['ellos','son / están']
+ ]},
+ exercises:[
+  {type:'mcq',q:'Which is correct: "Soy cansada" or "Estoy cansada" (I\'m tired right now)?',opts:['Soy cansada','Estoy cansada','Both are fine','Neither'],ans:1,fb:'Estoy cansada — tiredness is a current state, not a permanent identity. ESTAR wins here.'},
+  {type:'fill',q:'Complete: "_____ marroquí" (I am Moroccan — permanent identity)',ans:'soy',fb:'Soy = SER. Nationality is permanent. Soy marroquí, soy de Salé.'},
+  {type:'mcq',q:'"¿Dónde está el set?" uses ESTAR because:',opts:['Sets are always important','Location uses ESTAR','It\'s a question','Sets change all the time'],ans:1,fb:'Location ALWAYS uses ESTAR. ¿Dónde está...? is a fixed phrase.'},
+  {type:'fill',q:'Complete: "Ella _____ coordinadora de especialistas" (she is a stunt coordinator)',ans:'es',fb:'Profession = SER. Es coordinadora. One day that\'ll be "Soy coordinadora" 🏆'},
+  {type:'mcq',q:'"El gym está cerrado hoy" — why ESTAR?',opts:['Gyms are always closed','It\'s a temporary state (closed today, open tomorrow)','The gym is permanent','Está is always used with places'],ans:1,fb:'Temporary condition = ESTAR. Closed today doesn\'t mean closed forever. Cerrado (closed) = ESTAR.'},
+ ]},
+
+{sec:'verbs', cat:'🔴 Past tense 1 (Pretérito Indefinido)', id:'preterite_irreg', icon:'🔴', name:'Pretérito indefinido: top 10 irregular', type:'verb', xp:40, phase:1,
+ preview:'fui, hice, tuve, estuve, pude, vine, dije...',
+ phrases:[
+  {es:'Fui al rodaje de Netflix el año pasado',en:'I went to the Netflix shoot last year',note:'ir → fui'},
+  {es:'Hice 9 dominadas ayer',en:'I did 9 pull-ups yesterday',note:'hacer → hice'},
+  {es:'Tuve una lesión en la rodilla',en:'I had a knee injury',note:'tener → tuve'},
+  {es:'Estuve en el set 12 horas',en:'I was on set for 12 hours',note:'estar → estuve'},
+  {es:'No pude entrenar esta semana',en:'I couldn\'t train this week',note:'poder → pude'},
+  {es:'Vine desde Salé en moto',en:'I came from Salé by motorcycle',note:'venir → vine'},
+  {es:'Le dije la verdad al coordinador',en:'I told the truth to the coordinator',note:'decir → dije'},
+ ],
+ conjugation:{verb:'TOP 7 IRREGULAR (yo form)',color:'red',rows:[
+  ['ser / ir','fui (same!)'],['hacer','hice'],['tener','tuve'],['estar','estuve'],['poder','pude'],['venir','vine'],['decir','dije']
+ ]},
+ exercises:[
+  {type:'mcq',q:'Which is the preterite of IR (to go) with "yo"?',opts:['iba','voy','fui','fue'],ans:2,fb:'Fui! Ser and ir share the same preterite forms (fui, fuiste, fue...). Context tells you which. "Fui al gym" = I went to the gym.'},
+  {type:'fill',q:'Complete: "_____ 9 dominadas ayer" (I did 9 pull-ups yesterday)',ans:'hice',fb:'Hacer → hice. "Hice" is one of the most useful irregular preterites — you use it constantly to say what you did.'},
+  {type:'mcq',q:'"Tuve una lesión" means:',opts:['I have an injury','I had an injury','I\'ll have an injury','I don\'t have an injury'],ans:1,fb:'Tuve = I had (preterite of tener). Completed, finished event in the past.'},
+  {type:'fill',q:'Complete: "No _____ entrenar" (I couldn\'t train)',ans:'pude',fb:'Poder → pude. "No pude" = I couldn\'t. Incredibly useful phrase.'},
+ ]},
+
+{sec:'verbs', cat:'🟠 Past tense 2 (Pretérito Imperfecto)', id:'indef_vs_imp', icon:'🟠', name:'Indefinido vs Imperfecto — contrast', type:'verb', xp:50, phase:2,
+ preview:'"Corría cuando me caí" — the key contrast',
+ phrases:[
+  {es:'Hacía judo cuando era niña',en:'I did judo when I was a child',note:'Imperfecto: habitual past action + description'},
+  {es:'Ayer fui al gym y entrené dos horas',en:'Yesterday I went to the gym and trained for two hours',note:'Indefinido: completed specific actions'},
+  {es:'Corría por el set cuando me caí',en:'I was running on set when I fell',note:'Imperfecto (background) + Indefinido (interruption)'},
+  {es:'Antes vivía en Salé, ahora vivo en Rabat',en:'Before I lived in Salé, now I live in Rabat',note:'Imperfecto for past habit/state'},
+  {es:'El coordinador entró mientras yo practicaba los rolls',en:'The coordinator came in while I was practising the rolls',note:'Indefinido (event) + Imperfecto (ongoing action)'},
+ ],
+ conjugation:{verb:'QUICK CONTRAST',color:'',rows:[
+  ['Indefinido','completed, specific, one-time'],['Imperfecto','habit, description, ongoing'],['KEY SIGNAL','cuando (when) often triggers both'],['EXAMPLE','Dormía (imp.) cuando sonó (indef.) el teléfono']
+ ]},
+ exercises:[
+  {type:'mcq',q:'Which tense for "I used to do judo every day as a child"?',opts:['Pretérito indefinido','Pretérito imperfecto','Present tense','Future tense'],ans:1,fb:'Imperfecto! "Used to" = habit in the past = imperfecto. Hacía judo todos los días.'},
+  {type:'fill',q:'Complete with imperfecto: "Cuando era niña, _____ judo" (I used to do judo)',ans:'hacía',fb:'Hacer → hacía. -ía ending = imperfecto for -ER/-IR verbs. You\'ve got this.'},
+  {type:'mcq',q:'"Ayer fui al rodaje" — which tense and why?',opts:['Imperfecto — it was a habit','Indefinido — it was a specific completed event','Present — it just happened','Future — it\'s planned'],ans:1,fb:'Indefinido! "Ayer" (yesterday) + specific completed action = indefinido. Fui.'},
+  {type:'fill',q:'Complete: "Corría cuando me _____" (I was running when I fell)',ans:'caí',fb:'Corría (imperfecto, ongoing) + caí (indefinido, interruption). This is the key pattern!'},
+ ]},
+
+// ───────────── GRAMMAR ─────────────
+{sec:'grammar', cat:'🔤 Nouns & articles', id:'gender_rules', icon:'🔤', name:'Noun gender: el/la rules', type:'grammar', xp:20, phase:1,
+ preview:'Most -o = masculine, most -a = feminine...',
+ phrases:[
+  {es:'el hombro, el codo, el talón, el suelo',en:'masculine: -o ending (generally)',note:'el = masculine definite article'},
+  {es:'la rodilla, la cadera, la muñeca, la toma',en:'feminine: -a ending (generally)',note:'la = feminine definite article'},
+  {es:'el día, el mapa, el problema, el tema',en:'EXCEPTIONS: -a endings that are masculine!',note:'These must be memorised'},
+  {es:'la mano, la foto, la moto, la radio',en:'EXCEPTIONS: -o endings that are feminine!',note:'La moto! La mano! Remember these.'},
+  {es:'el/la especialista, el/la artista',en:'Both genders: -ista endings',note:'Determined by the person\'s gender'},
+ ],
+ exercises:[
+  {type:'mcq',q:'Is "moto" masculine or feminine?',opts:['masculine (el moto)','feminine (la moto)','depends on context','no article needed'],ans:1,fb:'LA moto! Exception to the -o rule. La moto, la foto, la mano — all feminine despite ending in -o. You ride la moto!'},
+  {type:'fill',q:'Complete: "_____ rodilla me duele" (my knee hurts — use "la")',ans:'la',fb:'Rodilla ends in -a → feminine → la. La rodilla. ✓'},
+  {type:'mcq',q:'"El problema" is masculine even though it ends in -a. Why?',opts:['It\'s wrong — should be la problema','It\'s a Greek-origin word ending in -ma (always masculine)','Problems are masculine','It\'s an exception with no rule'],ans:1,fb:'Words ending in -ma from Greek are usually masculine: el problema, el tema, el sistema, el idioma. Useful rule!'},
+  {type:'fill',q:'What article goes with "especialista" when talking about yourself (female)?',ans:'la',fb:'La especialista. -ista endings match the person\'s gender. You = la especialista, la doble de riesgo, la coordinadora.'},
+ ]},
+
+{sec:'grammar', cat:'🔀 Prepositions & connectors', id:'por_vs_para', icon:'🔀', name:'POR vs PARA — fully mastered', type:'grammar', xp:45, phase:2,
+ preview:'Para = purpose/destination. Por = cause/exchange/duration.',
+ phrases:[
+  {es:'Entreno para ser especialista',en:'I train in order to be a stunt performer',note:'PARA = purpose / goal'},
+  {es:'Salgo para Canadá en 9 meses',en:'I\'m leaving for Canada in 9 months',note:'PARA = destination'},
+  {es:'Gracias por tu ayuda',en:'Thank you for your help',note:'POR = reason / cause'},
+  {es:'Estuve en el set por 14 horas',en:'I was on set for 14 hours',note:'POR = duration of time'},
+  {es:'El arnés fue revisado por el coordinador',en:'The harness was checked by the coordinator',note:'POR = agent in passive voice'},
+  {es:'Te lo cambio por otra toma',en:'I\'ll swap it for another take',note:'POR = exchange'},
+ ],
+ exercises:[
+  {type:'mcq',q:'"Entreno _____ ser coordinadora" (in order to be a coordinator)',opts:['por','para','con','de'],ans:1,fb:'PARA! Purpose/goal = para. "Para + infinitive" = in order to do something.'},
+  {type:'fill',q:'Complete: "Gracias _____ tu tiempo" (thank you for your time)',ans:'por',fb:'POR! Gratitude uses por. Gracias por... = Thank you for... Fixed expression.'},
+  {type:'mcq',q:'"Estuve rodando _____ 3 horas" (I was filming for 3 hours)',opts:['para','por','en','de'],ans:1,fb:'POR! Duration of time = por. Estuve rodando por 3 horas. Filming for 3 hours.'},
+  {type:'fill',q:'Complete: "Salgo _____ Canadá" (I\'m leaving for Canada)',ans:'para',fb:'PARA! Destination = para. Salgo para Canadá. This sentence is your future 🇨🇦'},
+ ]},
+
+// ───────────── CULTURE & SET ─────────────
+{sec:'culture', cat:'🎬 On set — essential phrases', id:'onset_phrases', icon:'🎬', name:'On-set commands & phrases', type:'culture', xp:20, phase:1,
+ preview:'¡Acción!, ¡Corten!, ¿Estamos listos?...',
+ words:[
+  {es:'¡Acción!',en:'Action!',ex:'The director calls this — you move'},
+  {es:'¡Corten!',en:'Cut!',ex:'Everything stops immediately'},
+  {es:'¡Silencio en el set!',en:'Quiet on set!',ex:'Called before every take'},
+  {es:'¿Estamos listos?',en:'Are we ready?',ex:'Check before calling action'},
+  {es:'Desde el principio',en:'From the top',ex:'Start the sequence again'},
+  {es:'Una toma más',en:'One more take',ex:'The most common phrase in film'},
+  {es:'¡Para! / ¡Alto!',en:'Stop!',ex:'Emergency stop — know this instantly'},
+  {es:'Ensayamos primero',en:'We rehearse first',ex:'Before doing it for real'},
+  {es:'¿Estás bien?',en:'Are you OK?',ex:'After any fall or impact'},
+  {es:'El orden del día',en:'The call sheet',ex:'Your AD brain already knows this one'},
+  {es:'¡Muy bien! ¡Perfecto!',en:'Very good! Perfect!',ex:'What you want to hear after a take'},
+  {es:'Necesito la colchoneta',en:'I need the mat',ex:'Say this whenever you need it'},
+ ],
+ exercises:[
+  {type:'mcq',q:'The director yells "¡Para!" — what happened?',opts:['They want one more take','Something went wrong — emergency stop','They\'re happy with the take','They\'re calling lunch break'],ans:1,fb:'¡Para! / ¡Alto! = STOP. Emergency. Know this before anything else on a Spanish-speaking set.'},
+  {type:'fill',q:'Complete: "_____ en el set!" (Quiet on set!)',ans:'silencio',fb:'¡Silencio en el set! You\'ll hear this before every single take. Start recognising it now.'},
+  {type:'mcq',q:'After a hard stunt fall, someone asks "¿Estás bien?" — what are they asking?',opts:['Are you ready?','Are you tired?','Are you OK?','Are you finished?'],ans:2,fb:'¿Estás bien? = Are you OK? Estar + bien. The most human question on any set.'},
+  {type:'fill',q:'How do you say "I need the mat"?',ans:'necesito la colchoneta',fb:'Necesito = I need (from necesitar). La colchoneta = the mat. Say this loud and clear.'},
+ ]},
+
+{sec:'culture', cat:'🥋 Stunt & fight vocabulary', id:'fight_choreo', icon:'🥊', name:'Fight choreography terms', type:'culture', xp:25, phase:1,
+ preview:'golpe, patada, esquiva, bloqueo, reacción...',
+ words:[
+  {es:'el golpe',en:'the punch / blow / hit',ex:'El golpe viene de la derecha — The hit comes from the right'},
+  {es:'la patada',en:'the kick',ex:'Una patada giratoria — A spinning kick'},
+  {es:'la esquiva',en:'the dodge / evasion',ex:'La esquiva tiene que ser rápida — The dodge has to be fast'},
+  {es:'el bloqueo',en:'the block / parry',ex:'Bloqueo con el antebrazo — Block with the forearm'},
+  {es:'el contraataque',en:'the counter-attack',ex:'Después del bloqueo, el contraataque — After the block, the counter-attack'},
+  {es:'la reacción',en:'the reaction / sell',ex:'La reacción tiene que ser creíble — The reaction has to be believable'},
+  {es:'el timing',en:'the timing',ex:'El timing es todo — Timing is everything'},
+  {es:'la distancia de seguridad',en:'the safe distance',ex:'Mantén la distancia de seguridad — Keep the safe distance'},
+  {es:'vender el golpe',en:'to sell the hit',ex:'Tienes que vender el golpe — You have to sell the hit'},
+  {es:'la secuencia',en:'the sequence',ex:'Repite la secuencia — Repeat the sequence'},
+  {es:'despacio primero',en:'slow first / slow motion first',ex:'Despacio primero, luego más rápido — Slow first, then faster'},
+  {es:'¡Otra vez!',en:'Again! One more time!',ex:'¡Otra vez desde el principio! — Again from the top!'},
+ ],
+ exercises:[
+  {type:'mcq',q:'The coordinator says "La reacción tiene que ser creíble" — what does this mean?',opts:['The reaction has to be fast','The reaction has to be believable','The reaction has to be safe','The reaction has to be repeated'],ans:1,fb:'Creíble = believable. Your AD background helps here — you know what reads on camera. Now you know how to say it in Spanish too.'},
+  {type:'fill',q:'Complete: "Tienes que _____ el golpe" (you have to sell the hit)',ans:'vender',fb:'Vender = to sell. "Vender el golpe" = sell the hit. One of the most film-specific stunt phrases.'},
+  {type:'mcq',q:'"Despacio primero" means:',opts:['Do it fast','Slow first','Repeat it','Stop now'],ans:1,fb:'Despacio = slow/slowly. Primero = first. Every stunt coordinator says this. Learn it well.'},
+  {type:'fill',q:'Complete: "El _____ es todo" (timing is everything)',ans:'timing',fb:'El timing — same word in Spanish! Just say it with a Spanish accent. "El TIMING es todo" — true in any language.'},
+ ]},
+
+{sec:'culture', cat:'📻 Listening milestones', id:'ds_milestone', icon:'🎧', name:'First Dreaming Spanish video fully understood', type:'culture', xp:75, phase:1, permanent:true,
+ preview:'No subtitles, no pausing. You understood it.',
+ phrases:[
+  {es:'Lo entendí todo sin subtítulos',en:'I understood everything without subtitles',note:'Your first real milestone'},
+  {es:'El input comprensible funciona',en:'Comprehensible input works',note:'Trust the process'},
+  {es:'Dreaming Spanish: youtube.com/@DreamingSpanish',en:'Start with Super Beginner level',note:'Free, hundreds of hours'},
+  {es:'Pablo habla despacio y con imágenes',en:'Pablo speaks slowly and with images',note:'You understand from context, not translation'},
+ ],
+ exercises:[
+  {type:'mcq',q:'This is a permanent milestone. It means you:',opts:['Watched a video with English subtitles','Understood a full DS video with no subtitles at all','Translated every word','Watched it 10 times'],ans:1,fb:'No subtitles, no pausing, no dictionary. You understood it from context. THAT is the milestone. When it happens — come back and claim these 75 XP. 🔥'},
+ ]},
+
 ];
 
-const VERB_DATA=[
-  {cat:'🟢 Present tense (Presente)',items:[
-    {id:'vb_pres_ar',name:'Present: regular -AR verbs',hint:'hablar → hablo, hablas, habla, hablamos, habláis, hablan',xp:20,phase:1,type:'verb'},
-    {id:'vb_pres_er',name:'Present: regular -ER verbs',hint:'comer → como, comes, come, comemos, coméis, comen',xp:20,phase:1,type:'verb'},
-    {id:'vb_pres_ir',name:'Present: regular -IR verbs',hint:'vivir → vivo, vives, vive, vivimos, vivís, viven',xp:20,phase:1,type:'verb'},
-    {id:'vb_ser',name:'SER — to be (permanent)',hint:'soy, eres, es, somos, sois, son — identity, origin, profession',xp:30,phase:1,type:'verb'},
-    {id:'vb_estar',name:'ESTAR — to be (temporary)',hint:'estoy, estás, está, estamos, estáis, están — state, location, feeling',xp:30,phase:1,type:'verb'},
-    {id:'vb_ser_estar_diff',name:'SER vs ESTAR — fully understood',hint:'Soy cansada (character) vs Estoy cansada (right now). Huge difference.',xp:40,phase:1,type:'verb'},
-    {id:'vb_tener',name:'TENER — to have',hint:'tengo, tienes, tiene, tenemos, tenéis, tienen — also: tener que + inf.',xp:20,phase:1,type:'verb'},
-    {id:'vb_ir',name:'IR — to go',hint:'voy, vas, va, vamos, vais, van — also used for near future',xp:20,phase:1,type:'verb'},
-    {id:'vb_hacer',name:'HACER — to do/make',hint:'hago, haces, hace, hacemos, hacéis, hacen',xp:20,phase:1,type:'verb'},
-    {id:'vb_poder',name:'PODER — can / to be able to',hint:'puedo, puedes, puede, podemos, podéis, pueden (stem change o→ue)',xp:20,phase:1,type:'verb'},
-    {id:'vb_querer',name:'QUERER — to want',hint:'quiero, quieres, quiere, queremos, queréis, quieren (stem change e→ie)',xp:20,phase:1,type:'verb'},
-    {id:'vb_saber',name:'SABER — to know (facts/skills)',hint:'sé, sabes, sabe, sabemos, sabéis, saben',xp:15,phase:1,type:'verb'},
-    {id:'vb_venir',name:'VENIR — to come',hint:'vengo, vienes, viene, venimos, venís, vienen',xp:15,phase:1,type:'verb'},
-    {id:'vb_decir',name:'DECIR — to say/tell',hint:'digo, dices, dice, decimos, decís, dicen',xp:15,phase:1,type:'verb'},
-    {id:'vb_poner',name:'PONER — to put/place',hint:'pongo, pones, pone, ponemos, ponéis, ponen',xp:15,phase:1,type:'verb'},
-    {id:'vb_salir',name:'SALIR — to leave/go out',hint:'salgo, sales, sale, salimos, salís, salen',xp:15,phase:1,type:'verb'},
-    {id:'vb_reflexive',name:'Reflexive verbs — daily routine',hint:'levantarse, ducharse, acostarse, llamarse, sentirse, vestirse',xp:25,phase:1,type:'verb'},
-  ]},
-  {cat:'🟡 Near future (Futuro próximo)',items:[
-    {id:'vb_near_future',name:'Near future: IR + A + infinitive',hint:'Voy a entrenar. Vamos a rodar mañana. Va a doler.',xp:20,phase:1,type:'verb'},
-  ]},
-  {cat:'🔴 Past tense 1 (Pretérito Indefinido)',items:[
-    {id:'vb_indef_ar',name:'Pretérito indefinido: -AR regular',hint:'hablar → hablé, hablaste, habló, hablamos, hablasteis, hablaron',xp:25,phase:1,type:'verb'},
-    {id:'vb_indef_er_ir',name:'Pretérito indefinido: -ER/-IR regular',hint:'comer → comí, comiste, comió… / vivir → viví, viviste…',xp:25,phase:1,type:'verb'},
-    {id:'vb_indef_irreg',name:'Pretérito indefinido: top 10 irregular',hint:'ser/ir (fui), hacer (hice), tener (tuve), estar (estuve), poder (pude), poner (puse), venir (vine), decir (dije), dar (di), ver (vi)',xp:40,phase:1,type:'verb'},
-  ]},
-  {cat:'🟠 Past tense 2 (Pretérito Imperfecto)',items:[
-    {id:'vb_imp_reg',name:'Imperfecto: regular verbs',hint:'-AR: hablaba, hablabas, hablaba… / -ER/-IR: comía, comías, comía…',xp:30,phase:2,type:'verb'},
-    {id:'vb_imp_irreg',name:'Imperfecto: only 3 irregular verbs',hint:'ser (era), ir (iba), ver (veía)',xp:20,phase:2,type:'verb'},
-    {id:'vb_indef_vs_imp',name:'Indefinido vs Imperfecto — contrast understood',hint:'Indefinido = completed action. Imperfecto = description, habit, background. "Corría cuando me caí."',xp:50,phase:2,type:'verb'},
-  ]},
-  {cat:'🔵 Future & conditional',items:[
-    {id:'vb_future',name:'Future tense: simple future',hint:'hablaré, hablarás, hablará — add endings to infinitive',xp:25,phase:2,type:'verb'},
-    {id:'vb_future_irreg',name:'Future: irregular stems',hint:'tener→tendr, hacer→har, poder→podr, venir→vendr, decir→dir',xp:25,phase:2,type:'verb'},
-    {id:'vb_conditional',name:'Conditional: -ía endings',hint:'hablaría, comerías, viviría — same irregular stems as future',xp:25,phase:2,type:'verb'},
-    {id:'vb_si_clauses',name:'Si clauses: if/would',hint:'Si entrenara más, sería mejor. Si pudiera, iría a Canadá.',xp:35,phase:3,type:'verb'},
-  ]},
-  {cat:'🟣 Subjunctive (Subjuntivo)',items:[
-    {id:'vb_subj_exposure',name:'Subjunctive — exposure & recognition only',hint:'Hear: quiero que vengas, espero que estés bien. Don\'t produce it yet.',xp:20,phase:2,type:'verb'},
-    {id:'vb_subj_present',name:'Subjunctive present — active use',hint:'Trigger phrases: quiero que, espero que, es importante que, ojalá + subj.',xp:45,phase:3,type:'verb'},
-    {id:'vb_subj_reg',name:'Subjunctive present: regular conjugations',hint:'-AR → -e endings. -ER/-IR → -a endings. hable, coma, viva.',xp:35,phase:3,type:'verb'},
-  ]},
-  {cat:'⚪ Gerund & perfect',items:[
-    {id:'vb_gerund',name:'Gerund: estar + -ando/-iendo',hint:'Estoy entrenando. Estaba rodando. Voy corriendo.',xp:20,phase:2,type:'verb'},
-    {id:'vb_perfect',name:'Pretérito perfecto: haber + participio',hint:'he comido, has hecho, ha salido, hemos rodado — recent past',xp:25,phase:2,type:'verb'},
-  ]}
-];
-
-const GRAMMAR_DATA=[
-  {cat:'🔤 Nouns & articles',items:[
-    {id:'gr_gender',name:'Noun gender: el/la rules',hint:'Most -o = masculine, most -a = feminine. Exceptions: el día, la mano.',xp:20,phase:1,type:'grammar'},
-    {id:'gr_plural',name:'Plural formation',hint:'-s after vowel, -es after consonant. el tren → los trenes.',xp:10,phase:1,type:'grammar'},
-    {id:'gr_indef',name:'Indefinite articles: un/una/unos/unas',hint:'un chico, una chica, unos chicos, unas chicas',xp:10,phase:1,type:'grammar'},
-  ]},
-  {cat:'📐 Adjectives',items:[
-    {id:'gr_adj_agree',name:'Adjective agreement: gender & number',hint:'un chico alto / una chica alta / unos chicos altos / unas chicas altas',xp:20,phase:1,type:'grammar'},
-    {id:'gr_adj_position',name:'Adjective position',hint:'Usually after noun: una película buena. Before: gran, buen, mal.',xp:15,phase:1,type:'grammar'},
-    {id:'gr_comparatives',name:'Comparatives & superlatives',hint:'más…que, menos…que, tan…como. El/la más + adj.',xp:20,phase:2,type:'grammar'},
-  ]},
-  {cat:'🔗 Pronouns',items:[
-    {id:'gr_subject',name:'Subject pronouns',hint:'yo, tú, él/ella, nosotros, vosotros, ellos/ellas. Usted/ustedes in LatAm.',xp:10,phase:1,type:'grammar'},
-    {id:'gr_direct_obj',name:'Direct object pronouns',hint:'me, te, lo/la, nos, os, los/las — replace the object of verb',xp:25,phase:2,type:'grammar'},
-    {id:'gr_indirect_obj',name:'Indirect object pronouns',hint:'me, te, le, nos, os, les — to/for whom. Le dije la verdad.',xp:25,phase:2,type:'grammar'},
-    {id:'gr_reflexive_pron',name:'Reflexive pronouns',hint:'me, te, se, nos, os, se — with reflexive verbs',xp:20,phase:1,type:'grammar'},
-  ]},
-  {cat:'❓ Questions & negation',items:[
-    {id:'gr_questions',name:'Question words',hint:'¿qué?, ¿quién?, ¿cómo?, ¿dónde?, ¿cuándo?, ¿por qué?, ¿cuánto/a?',xp:15,phase:1,type:'grammar'},
-    {id:'gr_negation',name:'Negation patterns',hint:'No + verb. No tengo nada. No conozco a nadie. Nunca voy.',xp:15,phase:1,type:'grammar'},
-  ]},
-  {cat:'🔀 Prepositions & connectors',items:[
-    {id:'gr_por_para',name:'POR vs PARA — fully distinguished',hint:'Para = purpose/destination. Por = cause/exchange/duration. Classic trap.',xp:45,phase:2,type:'grammar'},
-    {id:'gr_connectors',name:'Discourse connectors',hint:'pero, sino, aunque, sin embargo, por eso, además, es decir, o sea',xp:20,phase:2,type:'grammar'},
-    {id:'gr_a_en_de',name:'A / EN / DE usage',hint:'Voy a Madrid. Estoy en el gym. Soy de Marruecos.',xp:15,phase:1,type:'grammar'},
-  ]},
-  {cat:'🔢 Numbers & quantity',items:[
-    {id:'gr_numbers',name:'Numbers 1–1000 + decimals',hint:'cien vs ciento. doscientos/as. mil. un millón.',xp:15,phase:1,type:'grammar'},
-    {id:'gr_time_telling',name:'Telling the time',hint:'¿Qué hora es? Son las tres. Es la una y media. A las ocho menos cuarto.',xp:15,phase:1,type:'grammar'},
-  ]}
-];
-
-const CULTURE_DATA=[
-  {cat:'🎬 On set — essential phrases',items:[
-    {id:'cu_onset1',name:'¡Silencio en el set! / ¡Acción! / ¡Corten!',hint:'The three you\'ll hear every single take.',xp:10,phase:1,type:'culture'},
-    {id:'cu_onset2',name:'¿Estamos listos? / Desde el principio / Una toma más',hint:'Are we ready? From the top. One more take.',xp:10,phase:1,type:'culture'},
-    {id:'cu_onset3',name:'El doble de riesgo está listo / necesito la colchoneta',hint:'The stunt double is ready / I need the mat',xp:10,phase:1,type:'culture'},
-    {id:'cu_onset4',name:'¿Cuántas tomas? / Esto es peligroso / ¿Puedes repetirlo?',hint:'How many takes? / This is dangerous / Can you repeat it?',xp:10,phase:1,type:'culture'},
-    {id:'cu_onset5',name:'Ensayamos primero / El marcaje / El orden del día',hint:'We rehearse first / The blocking / The call sheet',xp:15,phase:1,type:'culture'},
-    {id:'cu_onset6',name:'Security briefing vocabulary',hint:'zona de seguridad, protocolo, accidente, primeros auxilios, botiquín',xp:15,phase:2,type:'culture'},
-  ]},
-  {cat:'🥋 Stunt & fight vocabulary',items:[
-    {id:'cu_fight1',name:'Fight choreography terms',hint:'golpe, patada, esquiva, bloqueo, contraataque, caída controlada, reacción',xp:20,phase:1,type:'culture'},
-    {id:'cu_fight2',name:'Describe a stunt sequence in Spanish',hint:'Primero corro, luego salto, me agarro al cable y caigo hacia la derecha.',xp:25,phase:2,type:'culture'},
-    {id:'cu_fight3',name:'Body position instructions',hint:'agáchate, gira, levanta el brazo, baja la cabeza, rueda hacia la izquierda',xp:20,phase:2,type:'culture'},
-  ]},
-  {cat:'🎭 Spanish-language film & TV',items:[
-    {id:'cu_film1',name:'Watch 1 Spanish-language film',hint:'Note 3 expressions. Suggested: Pan\'s Labyrinth, Todo sobre mi madre',xp:40,phase:1,type:'culture'},
-    {id:'cu_film2',name:'Watch La Casa de Papel (3+ episodes)',hint:'Neutral Spanish, clear speech, high stakes — perfect.',xp:50,phase:3,type:'culture'},
-    {id:'cu_film3',name:'Watch Club de Cuervos (3+ episodes)',hint:'Mexican Spanish, film industry setting — directly relevant to you.',xp:50,phase:3,type:'culture'},
-    {id:'cu_film4',name:'Watch Élite (3+ episodes)',hint:'Modern slang, fast speech — level up your ear.',xp:50,phase:3,type:'culture'},
-  ]},
-  {cat:'🌎 Accents & regional differences',items:[
-    {id:'cu_accents1',name:'Spain vs Latin America — 5 key differences',hint:'vosotros (Spain only), vos (Argentina), ceceo, leísmo, vocabulary gaps',xp:20,phase:2,type:'culture'},
-    {id:'cu_accents2',name:'Mexican Spanish — 10 expressions',hint:'güey, chido, órale, no manches, chamba, ahorita, mande, padrísimo',xp:20,phase:2,type:'culture'},
-    {id:'cu_accents3',name:'Identify accents — Spain, Mexico, Argentina',hint:'Listen and recognise without someone telling you.',xp:30,phase:3,type:'culture'},
-  ]},
-  {cat:'📻 Listening milestones',items:[
-    {id:'cu_ds_first',name:'First Dreaming Spanish video fully understood',hint:'No subtitles, no pausing.',xp:75,phase:1,type:'culture',permanent:true},
-    {id:'cu_netflix_ep',name:'First Netflix episode in Spanish — done',hint:'Spanish audio + Spanish subtitles. No English.',xp:100,phase:3,type:'culture',permanent:true},
-    {id:'cu_joke',name:'Understood a joke in Spanish without translating',hint:'This is a real milestone. The language clicked.',xp:100,phase:2,type:'culture',permanent:true},
-    {id:'cu_phone',name:'Understood a native speaker on the phone',hint:'No face, no gestures, just sound. Big one.',xp:150,phase:3,type:'culture',permanent:true},
-    {id:'cu_set_real',name:'Used Spanish in a professional / set context',hint:'On a real set, with real crew. You made it.',xp:250,phase:3,type:'culture',permanent:true},
-  ]}
-];
-
-// ─── STATE ───────────────────────────────────────────────────────────────────
-let S = JSON.parse(localStorage.getItem('monstruo_v2')||'null') || {
-  totalXP:0, dailyXP:0, streak:0, daysHit:0, bestDay:0,
-  lastDate:null, done:{} // id → true (permanent once checked)
+// ════════════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════════════
+let S = JSON.parse(localStorage.getItem('monstruo_v3')||'null') || {
+  totalXP:0, dailyXP:0, streak:0, daysHit:0, bestDay:0, lastDate:null, done:{}
 };
 
-function today(){ return new Date().toISOString().split('T')[0]; }
-function save(){ localStorage.setItem('monstruo_v2',JSON.stringify(S)); }
+function todayStr(){ return new Date().toISOString().split('T')[0]; }
+function save(){ localStorage.setItem('monstruo_v3',JSON.stringify(S)); }
+function getLv(xp){ let l=LEVELS[0]; for(let i=LEVELS.length-1;i>=0;i--){ if(xp>=LEVELS[i].xp){l=LEVELS[i];break;} } return l; }
+function getNext(xp){ for(let i=0;i<LEVELS.length;i++){ if(LEVELS[i].xp>xp) return LEVELS[i]; } return null; }
 
-function getLv(xp){
-  let l=LEVELS[0];
-  for(let i=LEVELS.length-1;i>=0;i--){ if(xp>=LEVELS[i].xp){l=LEVELS[i];break;} }
-  return l;
-}
-function getNextLv(xp){
-  for(let i=0;i<LEVELS.length;i++){ if(LEVELS[i].xp>xp) return LEVELS[i]; }
-  return null;
-}
-
-// ─── UI UPDATE ────────────────────────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+// UI
+// ════════════════════════════════════════════════════════════
 function updateUI(){
-  const lv=getLv(S.totalXP), next=getNextLv(S.totalXP);
+  const lv=getLv(S.totalXP), nx=getNext(S.totalXP);
   document.getElementById('totalXP').textContent=S.totalXP.toLocaleString();
   document.getElementById('lvBadge').textContent='LEVEL '+lv.n;
-  document.getElementById('lvTitle').textContent=lv.e+' '+lv.title;
-  if(next){
-    const pct=((S.totalXP-lv.xp)/(next.xp-lv.xp))*100;
+  document.getElementById('lvTitle').textContent=lv.e+' '+lv.t;
+  if(nx){
+    const pct=((S.totalXP-lv.xp)/(nx.xp-lv.xp))*100;
     document.getElementById('lvBar').style.width=Math.min(pct,100)+'%';
     document.getElementById('barFrom').textContent=lv.xp.toLocaleString()+' XP';
-    document.getElementById('barTo').textContent=next.xp.toLocaleString()+' XP to next level';
+    document.getElementById('barTo').textContent=nx.xp.toLocaleString()+' XP to next';
   } else {
     document.getElementById('lvBar').style.width='100%';
-    document.getElementById('barFrom').textContent='MAX';
+    document.getElementById('barFrom').textContent='30000 XP';
     document.getElementById('barTo').textContent='👑 La Monstrua';
   }
-  // daily
-  const dn=document.getElementById('dailyNum');
-  const db=document.getElementById('dailyBar');
-  const ds=document.getElementById('dailyStatus');
+  const dn=document.getElementById('dailyNum'),db=document.getElementById('dBar'),ds=document.getElementById('dStatus');
   const pct=Math.min((S.dailyXP/100)*100,100);
-  dn.textContent=S.dailyXP;
-  db.style.width=pct+'%';
-  if(S.dailyXP>=150){
-    dn.className='daily-num hit';db.className='daily-bar-fill hit';
-    ds.className='daily-status hit';ds.textContent='🔥 BONUS DAY — '+S.dailyXP+' XP! You monster.';
-  } else if(S.dailyXP>=100){
-    dn.className='daily-num hit';db.className='daily-bar-fill hit';
-    ds.className='daily-status hit';ds.textContent='✅ Daily goal hit! '+(S.dailyXP-100)+' bonus XP';
-  } else {
-    dn.className='daily-num';db.className='daily-bar-fill';
-    ds.className='daily-status';ds.textContent='Need '+(100-S.dailyXP)+' more XP to close the day ✦';
-  }
+  dn.textContent=S.dailyXP; db.style.width=pct+'%';
+  if(S.dailyXP>=150){dn.className='daily-num hit';db.className='d-bar-fill hit';ds.className='daily-status hit';ds.textContent='🔥 BONUS DAY — '+S.dailyXP+' XP! You monster.';}
+  else if(S.dailyXP>=100){dn.className='daily-num hit';db.className='d-bar-fill hit';ds.className='daily-status hit';ds.textContent='✅ Daily goal hit! '+(S.dailyXP-100)+' bonus XP';}
+  else{dn.className='daily-num';db.className='d-bar-fill';ds.className='daily-status';ds.textContent='Need '+(100-S.dailyXP)+' more XP to close the day ✦';}
   document.getElementById('streakN').textContent=S.streak;
-  document.getElementById('daysHitN').textContent=S.daysHit;
+  document.getElementById('daysN').textContent=S.daysHit;
 }
 
-// ─── RENDER ───────────────────────────────────────────────────────────────────
-const CHECK_SVG=`<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,6 4.5,9 10.5,3"/></svg>`;
+// ════════════════════════════════════════════════════════════
+// RENDER CONCEPTS LIST
+// ════════════════════════════════════════════════════════════
+const SECS={vocab:'secVocab',verbs:'secVerbs',grammar:'secGrammar',culture:'secCulture'};
+const TYPE_COLORS={vocab:'var(--accent)',verb:'var(--accent2)',grammar:'var(--accent3)',culture:'var(--purple)'};
 
-function conceptHTML(item){
-  const t=item.type||'vocab';
-  const isDone=S.done[item.id];
-  return `<div class="concept ${isDone?'done':''}" data-id="${item.id}" data-xp="${item.xp}" data-type="${t}" onclick="toggle(this)">
-    <div class="concept-box">${CHECK_SVG}</div>
-    <div class="concept-body">
-      <div class="concept-name">${item.name}</div>
-      ${item.hint?`<div class="concept-hint">${item.hint}</div>`:''}
-      <div class="concept-meta">
-        <div class="concept-xp">+${item.xp} XP</div>
-        <div class="concept-phase">Phase ${item.phase}</div>
-        ${item.permanent?'<div class="concept-phase" style="background:#1a1500;border-color:#5a4800;color:var(--gold)">Permanent</div>':''}
-      </div>
-    </div>
-  </div>`;
-}
-
-function renderSection(elId, data){
-  const el=document.getElementById(elId);
-  el.innerHTML=data.map(cat=>`
-    <div class="cat-header">${cat.cat}<span></span></div>
-    ${cat.items.map(conceptHTML).join('')}
-  `).join('');
+function renderAll(){
+  const cats={vocab:{},verbs:{},grammar:{},culture:{}};
+  LESSONS.forEach(l=>{
+    if(!cats[l.sec][l.cat]) cats[l.sec][l.cat]=[];
+    cats[l.sec][l.cat].push(l);
+  });
+  Object.entries(cats).forEach(([sec,catMap])=>{
+    const el=document.getElementById(SECS[sec]);
+    if(!el) return;
+    let html='';
+    Object.entries(catMap).forEach(([cat,lessons])=>{
+      html+=`<div class="cat-label">${cat}<span></span></div>`;
+      lessons.forEach(l=>{
+        const done=S.done[l.id];
+        html+=`<div class="concept ${done?'done':''}" data-id="${l.id}" data-t="${l.type}" onclick="openLesson('${l.id}')">
+          <div class="concept-icon">${l.icon}</div>
+          <div class="concept-body">
+            <div class="concept-name">${l.name}</div>
+            <div class="concept-preview">${l.preview}</div>
+          </div>
+          <div class="concept-right">
+            <div class="xp-badge">+${l.xp} XP</div>
+            <div class="phase-tag">Phase ${l.phase}</div>
+            ${done?'<div class="done-check">✅</div>':''}
+          </div>
+        </div>`;
+      });
+    });
+    el.innerHTML=html;
+  });
 }
 
 function renderLevels(){
   const lv=getLv(S.totalXP);
-  document.getElementById('sec_levels').innerHTML=`
-    <div class="cat-header">🏆 Level progression<span></span></div>
+  document.getElementById('secLevels').innerHTML=`
+    <div class="cat-label">🏆 Level progression<span></span></div>
     ${LEVELS.map(l=>{
-      const here=l.n===lv.n;
-      const past=S.totalXP>=l.xp&&!here;
+      const here=l.n===lv.n, past=S.totalXP>=l.xp&&!here;
       return `<div class="lv-row ${here?'here':''} ${past?'past':''}">
         <div class="lv-emoji">${l.e}</div>
-        <div class="lv-name">${l.title}</div>
+        <div class="lv-name">${l.t}</div>
         <div class="lv-req">${l.xp.toLocaleString()} XP</div>
         ${here?'<div class="here-badge">YOU ARE HERE</div>':''}
       </div>`;
     }).join('')}`;
 }
 
-// ─── INTERACTION ──────────────────────────────────────────────────────────────
-function toggle(el){
-  const id=el.dataset.id;
-  const xp=parseInt(el.dataset.xp);
-  const wasDone=S.done[id];
+// ════════════════════════════════════════════════════════════
+// TABS
+// ════════════════════════════════════════════════════════════
+const TABS=[
+  {id:'vocab',label:'📖 Vocabulaire',c:'vocab'},
+  {id:'verbs',label:'⚡ Verbes',c:'verbs'},
+  {id:'grammar',label:'⚙️ Grammaire',c:'grammar'},
+  {id:'culture',label:'🌍 Culture & Set',c:'culture'},
+  {id:'levels',label:'🏆 Levels',c:'levels'},
+];
+document.getElementById('tabRow').innerHTML=TABS.map((t,i)=>
+  `<button class="tab ${i===0?'active':''}" data-c="${t.c}" onclick="switchTab('${t.id}',this)">${t.label}</button>`
+).join('');
 
-  if(wasDone){
-    // uncheck — remove XP
-    S.done[id]=false;
-    S.totalXP=Math.max(0,S.totalXP-xp);
-    S.dailyXP=Math.max(0,S.dailyXP-xp);
-    el.classList.remove('done');
-  } else {
-    const prevTotal=S.totalXP;
-    S.done[id]=true;
-    S.totalXP+=xp;
-    S.dailyXP+=xp;
-    el.classList.add('done');
-    showPop('+'+xp+' XP',el);
-    // level up?
-    if(getLv(S.totalXP).n>getLv(prevTotal).n){
-      setTimeout(()=>showToast('🏆 LEVEL UP! '+getLv(S.totalXP).e+' '+getLv(S.totalXP).title,true),350);
-    }
-    // daily goal?
-    if(S.dailyXP>=100&&S.dailyXP-xp<100){
-      S.daysHit=(S.daysHit||0)+1;
-      setTimeout(()=>showToast('✅ Daily 100 XP hit!'),700);
-    }
-  }
-  if(S.dailyXP>S.bestDay) S.bestDay=S.dailyXP;
-  save(); updateUI();
-}
-
-function resetDay(){
-  if(!confirm('Reset today? XP from today\'s checks will be removed. Permanent milestones stay.')) return;
-  // only remove non-permanent items from today
-  S.dailyXP=0;
-  save(); updateUI();
-  showToast('Day reset. Fresh start. 🔄',false,true);
-}
-
-function switchSec(id,btn){
-  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.sec-panel').forEach(p=>p.classList.remove('active'));
+function switchTab(id,btn){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.sec').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('sec_'+id).classList.add('active');
+  const secId='sec'+id.charAt(0).toUpperCase()+id.slice(1);
+  document.getElementById(secId).classList.add('active');
   if(id==='levels') renderLevels();
 }
 
-// ─── NEW DAY CHECK ────────────────────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+// LESSON MODAL
+// ════════════════════════════════════════════════════════════
+let currentLesson=null;
+let exerciseState={};
+
+function openLesson(id){
+  const l=LESSONS.find(x=>x.id===id);
+  if(!l) return;
+  currentLesson=l;
+  exerciseState={answers:{},correct:0,total:l.exercises?l.exercises.length:0};
+
+  const modal=document.getElementById('modal');
+  const typeClass={vocab:'vocab',verb:'verb',grammar:'grammar',culture:'culture'}[l.type]||'vocab';
+  modal.className='modal '+typeClass;
+
+  document.getElementById('mIcon').textContent=l.icon;
+  document.getElementById('mTitle').textContent=l.name;
+  document.getElementById('mSub').textContent=l.preview;
+  const pill=document.getElementById('mXpPill');
+  const colors={vocab:TYPE_COLORS.vocab,verb:TYPE_COLORS.verb,grammar:TYPE_COLORS.grammar,culture:TYPE_COLORS.culture};
+  const col=colors[l.type]||TYPE_COLORS.vocab;
+  pill.style.background=col==='var(--accent)'?'rgba(200,255,62,.15)':col==='var(--accent2)'?'rgba(255,92,62,.15)':col==='var(--accent3)'?'rgba(62,200,255,.15)':'rgba(185,124,255,.15)';
+  pill.style.color=col;
+  pill.style.border=`1px solid ${col}`;
+  pill.textContent=`+${l.xp} XP · Phase ${l.phase}`;
+
+  // progress bar
+  document.getElementById('mpFill').style.width='0%';
+  document.getElementById('mpLabel').textContent='Work through the exercises to unlock Slay ✦';
+
+  // build body
+  let html='';
+
+  // words
+  if(l.words&&l.words.length){
+    html+=`<div class="cat-label" style="margin-top:.5rem">📚 Vocabulary<span></span></div>`;
+    html+=`<div class="word-grid">`;
+    l.words.forEach(w=>{
+      html+=`<div class="word-card"><div class="word-es">${w.es}</div><div class="word-en">${w.en}</div>${w.ex?`<div class="word-example">${w.ex}</div>`:''}</div>`;
+    });
+    html+=`</div>`;
+  }
+
+  // phrases
+  if(l.phrases&&l.phrases.length){
+    html+=`<div class="cat-label" style="margin-top:.5rem">💬 Key phrases<span></span></div>`;
+    const colors2={verb:'red',grammar:'blue',culture:'purple'};
+    const pc=colors2[l.type]||'';
+    l.phrases.forEach(p=>{
+      html+=`<div class="phrase-block ${pc}"><div class="phrase-es">${p.es}</div><div class="phrase-en">${p.en}</div>${p.note?`<div class="phrase-note">💡 ${p.note}</div>`:''}</div>`;
+    });
+  }
+
+  // conjugation table
+  if(l.conjugation){
+    const c=l.conjugation;
+    html+=`<div class="cat-label" style="margin-top:1rem">📊 ${c.verb}<span></span></div>`;
+    html+=`<table class="conj-table ${c.color||''}"><thead><tr><th>Pronoun</th><th>Form</th></tr></thead><tbody>`;
+    c.rows.forEach(r=>{ html+=`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`; });
+    html+=`</tbody></table>`;
+  }
+
+  // exercises
+  if(l.exercises&&l.exercises.length){
+    html+=`<div class="cat-label" style="margin-top:1rem">🎯 Exercises<span></span></div>`;
+    l.exercises.forEach((ex,i)=>{
+      html+=`<div class="exercise-block" id="ex_${i}">`;
+      html+=`<div class="ex-label">Exercise ${i+1} of ${l.exercises.length}</div>`;
+      html+=`<div class="ex-question">${ex.q}</div>`;
+      if(ex.type==='mcq'){
+        html+=`<div class="ex-options">`;
+        ex.opts.forEach((opt,j)=>{
+          html+=`<button class="ex-opt" onclick="answerMCQ(${i},${j})">${opt}</button>`;
+        });
+        html+=`</div>`;
+      } else if(ex.type==='fill'){
+        html+=`<input class="fill-input" id="fill_${i}" placeholder="Type your answer..." onkeydown="if(event.key==='Enter')checkFill(${i})">`;
+        html+=`<button class="check-btn" onclick="checkFill(${i})">Check ✓</button>`;
+      }
+      html+=`<div class="ex-feedback" id="fb_${i}"></div>`;
+      html+='</div>';
+    });
+  }
+
+  document.getElementById('mBody').innerHTML=html;
+
+  // slay button state
+  const slayBtn=document.getElementById('slayBtn');
+  const slaySub=document.getElementById('slaySub');
+  if(S.done[l.id]){
+    slayBtn.textContent='✅ Already slayed!';
+    slayBtn.style.background='linear-gradient(135deg,#2a4810,#1a3008)';
+    slayBtn.style.color='var(--accent)';
+    slayBtn.style.boxShadow='none';
+    slayBtn.onclick=null;
+    slaySub.textContent='You already earned these XP. Legend.';
+  } else {
+    slayBtn.textContent='✨ SLAAAAAAAY ✨';
+    slayBtn.style.background='linear-gradient(135deg,var(--pink),var(--purple),var(--accent3))';
+    slayBtn.style.color='#fff';
+    slayBtn.style.boxShadow='0 4px 30px rgba(255,110,180,.3)';
+    slayBtn.onclick=slay;
+    if(exerciseState.total>0){
+      slayBtn.style.opacity='0.4';
+      slayBtn.style.pointerEvents='none';
+      slaySub.textContent=`Complete all ${exerciseState.total} exercises to unlock ✦`;
+    }
+  }
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('modal').scrollTop=0;
+}
+
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  currentLesson=null;
+}
+
+function handleOverlayClick(e){
+  if(e.target===document.getElementById('modalOverlay')) closeModal();
+}
+
+// ════════════════════════════════════════════════════════════
+// PUERTO RICAN FLIRTS & INSULTS
+// ════════════════════════════════════════════════════════════
+const FLIRTS = [
+  "🔥 Wepa! Eso estuvo brutal, mi amor~ tú sí que sabes",
+  "💅 Ay bendito, qué inteligente tú eres... me tienes loca",
+  "😍 Chacho, tú aprendes rápido rápido — me encantas así",
+  "🌴 Wooow mira tú, correcta y todo — tú eres una fiera, nena",
+  "💋 Eso es correcto, mamita. Tú y el español se llevan demasiado bien",
+  "🥵 Ay ay ay, tú sí que estás fuerte con el español hoy~",
+  "✨ Wepa wepa! Ni yo lo hubiera dicho mejor, te lo juro",
+  "😘 Tú eres un fuego, nena — respondiste eso como toda una boricua",
+  "🏝️ Chacho qué lista, si sigues así vas a hablar mejor que yo",
+  "💃 Eso estuvo perfecto, mi cielo — el español te queda bien",
+  "🎯 Correctísimo! Tú sí que tienes la mente afilada, hermosa",
+  "🌺 Ay dios mío, tú me tienes impresionado/a — qué inteligente tú eres",
+];
+
+const INSULTS = [
+  "😭 Ay bendito... eso estuvo más perdido que un juey bizco, mi amor",
+  "💀 Chacho nooo — eso fue un desastre pero te quiero igual",
+  "😤 Wepa... NOT. Eso estuvo mal pero bueno, nadie nació sabiendo",
+  "🤦 Ay nena, tú estás en modo 'pa'l carajo' hoy — vuelve a intentarlo",
+  "😅 Eso estuvo más torcido que un cable de arroz — pero tú puedes",
+  "🫣 Dios mío, eso fue un chin de malo — relájate y lee de nuevo",
+  "🙈 Ay ay ay... eso sonó como si lo inventaste — y no iba",
+  "💅 Mija, eso fue un mojaíto de equivocación — pero pa'lante que somos de acero",
+  "😂 Chacho eso estuvo pal carajo pero me reí — tú sigue intentando",
+  "🫠 Ay bendito mi cielo, eso fue un poco malo malo — pero tú vuelves",
+  "🤣 Eso no... pero sabes qué, hasta los mejores se equivocan, mi amor",
+  "😬 Wepa... eso fue un revolú — pero respira y vuelve a leer",
+];
+
+function getRandom(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function showVibeToast(correct){
+  const msg = correct ? getRandom(FLIRTS) : getRandom(INSULTS);
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.className='toast show '+(correct?'pink':'red');
+  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),3200);
+}
+
+// ════════════════════════════════════════════════════════════
+// EXERCISES
+// ════════════════════════════════════════════════════════════
+function answerMCQ(exIdx,optIdx){
+  if(exerciseState.answers[exIdx]!==undefined) return;
+  const ex=currentLesson.exercises[exIdx];
+  const opts=document.querySelectorAll(`#ex_${exIdx} .ex-opt`);
+  const fb=document.getElementById(`fb_${exIdx}`);
+  exerciseState.answers[exIdx]=optIdx;
+  const correct=optIdx===ex.ans;
+  opts.forEach((o,i)=>{
+    if(i===ex.ans) o.classList.add('correct');
+    else if(i===optIdx&&!correct) o.classList.add('wrong');
+  });
+  fb.textContent=ex.fb;
+  fb.className='ex-feedback '+(correct?'good':'bad');
+  if(correct) exerciseState.correct++;
+  showVibeToast(correct);
+  checkExerciseProgress();
+}
+
+function checkFill(exIdx){
+  if(exerciseState.answers[exIdx]!==undefined) return;
+  const ex=currentLesson.exercises[exIdx];
+  const inp=document.getElementById(`fill_${exIdx}`);
+  const fb=document.getElementById(`fb_${exIdx}`);
+  const val=inp.value.trim().toLowerCase();
+  const expected=(ex.ans||'').toLowerCase();
+  const correct=val===expected||val.replace(/[¿¡]/g,'')===expected.replace(/[¿¡]/g,'')||expected.includes(val);
+  exerciseState.answers[exIdx]=val;
+  inp.className='fill-input '+(correct?'correct':'wrong');
+  inp.disabled=true;
+  if(!correct) inp.value=inp.value+' → '+ex.ans;
+  fb.textContent=ex.fb;
+  fb.className='ex-feedback '+(correct?'good':'bad');
+  if(correct) exerciseState.correct++;
+  showVibeToast(correct);
+  checkExerciseProgress();
+}
+
+function checkExerciseProgress(){
+  const done=Object.keys(exerciseState.answers).length;
+  const total=exerciseState.total;
+  const pct=total>0?(done/total)*100:100;
+  document.getElementById('mpFill').style.width=pct+'%';
+  if(done>=total&&total>0){
+    document.getElementById('mpLabel').textContent=`All exercises done! ${exerciseState.correct}/${total} correct ✦`;
+    const slayBtn=document.getElementById('slayBtn');
+    const slaySub=document.getElementById('slaySub');
+    if(!S.done[currentLesson.id]){
+      slayBtn.style.opacity='1';
+      slayBtn.style.pointerEvents='auto';
+      slaySub.textContent=`You crushed it! +${currentLesson.xp} XP waiting for you ✨`;
+    }
+  }
+}
+
+// ════════════════════════════════════════════════════════════
+// SLAY
+// ════════════════════════════════════════════════════════════
+function slay(){
+  if(!currentLesson||S.done[currentLesson.id]) return;
+  const l=currentLesson;
+  const prevTotal=S.totalXP;
+  S.done[l.id]=true;
+  S.totalXP+=l.xp;
+  S.dailyXP+=l.xp;
+  if(S.dailyXP>S.bestDay) S.bestDay=S.dailyXP;
+  if(S.dailyXP>=100&&S.dailyXP-l.xp<100) S.daysHit=(S.daysHit||0)+1;
+  save();
+  spawnSparkles();
+  const slayBtn=document.getElementById('slayBtn');
+  const slaySub=document.getElementById('slaySub');
+  slayBtn.textContent='✅ SLAYED! +'+l.xp+' XP';
+  slayBtn.style.background='linear-gradient(135deg,#1a4008,#0c2805)';
+  slayBtn.style.color='var(--accent)';
+  slayBtn.style.boxShadow='none';
+  slayBtn.onclick=null;
+  slaySub.textContent="XP added. Concept locked. You're unstoppable. 👑";
+  const lvBefore=getLv(prevTotal),lvAfter=getLv(S.totalXP);
+  if(lvAfter.n>lvBefore.n){
+    setTimeout(()=>showToast('🏆 LEVEL UP! '+lvAfter.e+' '+lvAfter.t,'gold'),600);
+  } else if(S.dailyXP>=100&&S.dailyXP-l.xp<100){
+    setTimeout(()=>showToast('✅ Daily 100 XP hit!','green'),400);
+  } else {
+    showToast('+'+l.xp+' XP — SLAYED!','pink');
+  }
+  updateUI();
+  const card=document.querySelector(`.concept[data-id="${l.id}"]`);
+  if(card){
+    card.classList.add('done');
+    const cr=card.querySelector('.concept-right');
+    if(cr&&!cr.querySelector('.done-check')){ const d=document.createElement('div'); d.className='done-check'; d.textContent='✅'; cr.appendChild(d); }
+  }
+}
+
+function spawnSparkles(){
+  const emojis=['✨','⭐','💫','🌟','🔥','👑','💥','🎯'];
+  const btn=document.getElementById('slayBtn');
+  const rect=btn.getBoundingClientRect();
+  for(let i=0;i<18;i++){
+    setTimeout(()=>{
+      const s=document.createElement('div');
+      s.className='sparkle';
+      s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      const tx=(Math.random()-0.5)*220;
+      const ty=-(Math.random()*180+60);
+      s.style.setProperty('--tx',tx+'px');
+      s.style.setProperty('--ty',ty+'px');
+      s.style.left=(rect.left+rect.width/2+Math.random()*60-30)+'px';
+      s.style.top=(rect.top+window.scrollY)+'px';
+      document.body.appendChild(s);
+      setTimeout(()=>s.remove(),950);
+    },i*45);
+  }
+}
+
+// ════════════════════════════════════════════════════════════
+// MISC
+// ════════════════════════════════════════════════════════════
+function resetDay(){
+  if(!confirm('Reset today? Daily XP counter goes to 0.')) return;
+  S.dailyXP=0; save(); updateUI();
+  showToast('Day reset. Fresh start. 🔄','green');
+}
+
+let _tt;
+function showToast(msg,type='green'){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.className=`toast show ${type}`;
+  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),2600);
+}
+
 function checkNewDay(){
-  const t=today();
+  const t=todayStr();
   if(S.lastDate&&S.lastDate!==t){
-    if(S.dailyXP>=100) S.streak=(S.streak||0)+1;
-    else S.streak=0;
+    if(S.dailyXP>=100) S.streak=(S.streak||0)+1; else S.streak=0;
     S.dailyXP=0;
   }
   S.lastDate=t; save();
 }
 
-// ─── TOAST & POP ─────────────────────────────────────────────────────────────
-let _tt;
-function showToast(msg,gold=false,red=false){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.className='toast show'+(gold?' gold':'')+(red?' red':'');
-  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),2600);
-}
-function showPop(msg,el){
-  const r=el.getBoundingClientRect();
-  const p=document.createElement('div');
-  p.className='xp-pop';p.textContent=msg;
-  p.style.left=(r.left+r.width/2-24)+'px';
-  p.style.top=(r.top+window.scrollY-8)+'px';
-  document.body.appendChild(p);
-  setTimeout(()=>p.remove(),750);
+// ════════════════════════════════════════════════════════════
+// SOUND ENGINE — Web Audio API, no external files
+// ════════════════════════════════════════════════════════════
+let AC = null;
+let musicPlaying = false;
+let musicNodes = {};
+
+function getAC(){
+  if(!AC) AC = new (window.AudioContext||window.webkitAudioContext)();
+  if(AC.state==='suspended') AC.resume();
+  return AC;
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
+// ── master gain ──────────────────────────────────────────
+function masterGain(val=0.7){
+  const g=getAC().createGain(); g.gain.value=val;
+  g.connect(getAC().destination); return g;
+}
+
+// ── basic oscillator one-shot ────────────────────────────
+function playTone(freq,type,duration,gainVal,startTime,dest){
+  const ac=getAC();
+  const osc=ac.createOscillator();
+  const g=ac.createGain();
+  osc.type=type; osc.frequency.value=freq;
+  g.gain.setValueAtTime(gainVal,startTime);
+  g.gain.exponentialRampToValueAtTime(0.001,startTime+duration);
+  osc.connect(g); g.connect(dest||ac.destination);
+  osc.start(startTime); osc.stop(startTime+duration+0.01);
+}
+
+// ── noise burst (snare/hi-hat) ───────────────────────────
+function playNoise(duration,gainVal,startTime,dest,hipass=2000){
+  const ac=getAC();
+  const bufSize=ac.sampleRate*duration;
+  const buf=ac.createBuffer(1,bufSize,ac.sampleRate);
+  const data=buf.getChannelData(0);
+  for(let i=0;i<bufSize;i++) data[i]=Math.random()*2-1;
+  const src=ac.createBufferSource();
+  src.buffer=buf;
+  const filter=ac.createBiquadFilter();
+  filter.type='highpass'; filter.frequency.value=hipass;
+  const g=ac.createGain();
+  g.gain.setValueAtTime(gainVal,startTime);
+  g.gain.exponentialRampToValueAtTime(0.001,startTime+duration);
+  src.connect(filter); filter.connect(g); g.connect(dest||ac.destination);
+  src.start(startTime); src.stop(startTime+duration+0.01);
+}
+
+// ════════════════════════════════════════════════════════════
+// SOUND: CORRECT ✅ — bright hype ding
+// ════════════════════════════════════════════════════════════
+function soundCorrect(){
+  const ac=getAC(); const t=ac.currentTime;
+  const dest=masterGain(0.5);
+  // rising arpeggio: C5 E5 G5 C6
+  [[523,0],[659,0.06],[784,0.12],[1047,0.18]].forEach(([f,d])=>{
+    playTone(f,'sine',0.18,0.6,t+d,dest);
+    playTone(f*2,'sine',0.1,0.15,t+d,dest);
+  });
+}
+
+// ════════════════════════════════════════════════════════════
+// SOUND: WRONG ❌ — reggaeton-style fail buzz
+// ════════════════════════════════════════════════════════════
+function soundWrong(){
+  const ac=getAC(); const t=ac.currentTime;
+  const dest=masterGain(0.55);
+  // descending sad tones
+  [[300,0,'sawtooth',0.4],[220,0.12,'sawtooth',0.35],[180,0.25,'sawtooth',0.25]].forEach(([f,d,type,g])=>{
+    playTone(f,type,0.18,g,t+d,dest);
+  });
+  // buzzy noise hit
+  playNoise(0.15,0.3,t,dest,100);
+}
+
+// ════════════════════════════════════════════════════════════
+// SOUND: XP GAIN 💰 — coin-ish chime
+// ════════════════════════════════════════════════════════════
+function soundXP(){
+  const ac=getAC(); const t=ac.currentTime;
+  const dest=masterGain(0.4);
+  playTone(880,'sine',0.12,0.5,t,dest);
+  playTone(1320,'sine',0.1,0.4,t+0.07,dest);
+  playTone(1760,'sine',0.15,0.5,t+0.13,dest);
+}
+
+// ════════════════════════════════════════════════════════════
+// SOUND: LEVEL UP 🏆 — full fanfare
+// ════════════════════════════════════════════════════════════
+function soundLevelUp(){
+  const ac=getAC(); const t=ac.currentTime;
+  const dest=masterGain(0.55);
+  // triumphant chord progression
+  const notes=[
+    [523,0],[659,0],[784,0],       // C major chord
+    [698,0.25],[880,0.25],[1047,0.25], // F major chord
+    [784,0.5],[988,0.5],[1175,0.5],   // G major chord
+    [1047,0.75],[1319,0.75],[1568,0.75],[2093,0.75] // C major high
+  ];
+  notes.forEach(([f,d])=>playTone(f,'sine',0.35,0.4,t+d,dest));
+  // snare hits on beat
+  [0.25,0.5,0.75].forEach(d=>playNoise(0.08,0.25,t+d,dest,3000));
+}
+
+// ════════════════════════════════════════════════════════════
+// SOUND: SLAY 👑 — dramatic fanfare + TTS voice
+// ════════════════════════════════════════════════════════════
+function soundSlay(){
+  const ac=getAC(); const t=ac.currentTime;
+  const dest=masterGain(0.6);
+
+  // big dramatic fanfare
+  const fanfare=[
+    [523,0,0.3],[659,0,0.3],[784,0,0.3],[1047,0,0.5],
+    [880,0.35,0.3],[1047,0.35,0.3],[1319,0.35,0.4],
+    [1047,0.65,0.6],[1319,0.65,0.6],[1568,0.65,0.6],[2093,0.65,0.8],
+  ];
+  fanfare.forEach(([f,d,dur])=>playTone(f,'sine',dur,0.45,t+d,dest));
+  // kick + snare pattern
+  [0,0.25,0.5,0.65].forEach(d=>playNoise(0.12,0.35,t+d,dest,80));
+  [0.25,0.75].forEach(d=>playNoise(0.1,0.3,t+d,dest,4000));
+
+  // TTS "SLAAAAAY" — dramatic feminine pitch
+  setTimeout(()=>{
+    if(!window.speechSynthesis) return;
+    const u=new SpeechSynthesisUtterance('Slaaaaaaay!');
+    u.pitch=1.8; u.rate=0.75; u.volume=1;
+    // try to find a female voice
+    const voices=speechSynthesis.getVoices();
+    const fem=voices.find(v=>v.name.toLowerCase().includes('female')||
+      v.name.includes('Samantha')||v.name.includes('Victoria')||
+      v.name.includes('Karen')||v.name.includes('Moira')||
+      v.name.includes('Fiona')||v.name.includes('Tessa'));
+    if(fem) u.voice=fem;
+    speechSynthesis.speak(u);
+  }, 800);
+}
+
+// ════════════════════════════════════════════════════════════
+// BACKGROUND MUSIC — dembow/reggaeton pattern
+// ════════════════════════════════════════════════════════════
+function startMusic(){
+  if(musicPlaying) return;
+  musicPlaying=true;
+  document.getElementById('musicBtn').textContent='🎵 Music ON';
+  document.getElementById('musicBtn').style.color='var(--accent)';
+  document.getElementById('musicBtn').style.borderColor='var(--accent)';
+  scheduleDembow();
+}
+
+function stopMusic(){
+  musicPlaying=false;
+  document.getElementById('musicBtn').textContent='🎵 Music OFF';
+  document.getElementById('musicBtn').style.color='var(--muted2)';
+  document.getElementById('musicBtn').style.borderColor='var(--border)';
+  Object.values(musicNodes).forEach(n=>{ try{n.stop();}catch(e){} });
+  musicNodes={};
+}
+
+let dembowStartTime=0;
+function scheduleDembow(){
+  if(!musicPlaying) return;
+  const ac=getAC();
+  const bpm=95;
+  const beat=60/bpm;
+  const bar=beat*4;
+  const now=ac.currentTime;
+  const start = dembowStartTime < now ? now+0.05 : dembowStartTime;
+  dembowStartTime = start + bar*2;
+
+  const mGain=ac.createGain(); mGain.gain.value=0.28; mGain.connect(ac.destination);
+
+  // bass line
+  const bassNotes=[
+    [0,55,0.3],[beat*0.5,55,0.15],[beat*0.75,49,0.2],
+    [beat,52,0.25],[beat*1.5,55,0.15],[beat*1.75,52,0.1],
+    [beat*2,55,0.3],[beat*2.5,55,0.15],[beat*2.75,49,0.2],
+    [beat*3,52,0.25],[beat*3.5,55,0.15],[beat*3.75,49,0.1],
+    [bar+0,58,0.3],[bar+beat*0.5,58,0.15],[bar+beat*0.75,55,0.2],
+    [bar+beat,52,0.25],[bar+beat*1.5,55,0.15],
+    [bar+beat*2,58,0.3],[bar+beat*2.5,58,0.15],[bar+beat*2.75,55,0.2],
+    [bar+beat*3,52,0.3],[bar+beat*3.5,49,0.2],[bar+beat*3.75,52,0.1],
+  ];
+  bassNotes.forEach(([d,midi,dur])=>{
+    const freq=440*Math.pow(2,(midi-69)/12);
+    playTone(freq,'sawtooth',dur,0.5,start+d,mGain);
+    playTone(freq/2,'sine',dur,0.4,start+d,mGain);
+  });
+
+  // kicks
+  const kicks=[0,beat*0.75,beat*1.5,beat*2,beat*2.75,beat*3.5,
+               bar,bar+beat*0.75,bar+beat*1.5,bar+beat*2,bar+beat*2.75,bar+beat*3.5];
+  kicks.forEach(d=>{
+    playNoise(0.08,0.6,start+d,mGain,20);
+    playTone(60,'sine',0.12,0.7,start+d,mGain);
+  });
+
+  // snares
+  const snares=[beat,beat*3,bar+beat,bar+beat*3];
+  snares.forEach(d=>playNoise(0.07,0.4,start+d,mGain,1800));
+
+  // hi-hats
+  for(let i=0;i<16;i++){
+    if(i%2===0) continue;
+    playNoise(0.04,0.15,start+(i*(beat/4)),mGain,8000);
+  }
+  for(let i=0;i<16;i++){
+    if(i%2===0) continue;
+    playNoise(0.04,0.15,start+bar+(i*(beat/4)),mGain,8000);
+  }
+
+  const delay=(dembowStartTime-ac.currentTime-0.1)*1000;
+  setTimeout(()=>scheduleDembow(), Math.max(delay,50));
+}
+
+// ════════════════════════════════════════════════════════════
+// WIRE SOUNDS INTO EXISTING FUNCTIONS
+// ════════════════════════════════════════════════════════════
+// Patch showVibeToast to also trigger sounds
+const _origShowVibe = showVibeToast;
+window.showVibeToast = function(correct){
+  _origShowVibe(correct);
+  try{ correct ? soundCorrect() : soundWrong(); }catch(e){}
+  setTimeout(()=>{ try{ soundXP(); }catch(e){} }, correct?350:0);
+};
+
+// Patch slay to trigger slay sound
+const _origSlay = slay;
+window.slay = function(){
+  _origSlay();
+  try{ soundSlay(); }catch(e){}
+};
+
+// Patch showToast for level up sound
+const _origShowToast = showToast;
+window.showToast = function(msg,type='green'){
+  _origShowToast(msg,type);
+  if(type==='gold') try{ soundLevelUp(); }catch(e){}
+};
+
+// ════════════════════════════════════════════════════════════
+// TOGGLE MUSIC — on window so inline onclick can find it
+// ════════════════════════════════════════════════════════════
+window.toggleMusic = function(){
+  getAC();
+  if(musicPlaying) stopMusic(); else startMusic();
+};
+
+// ════════════════════════════════════════════════════════════
+// MUSIC BUTTON UI — inject into hero
+// ════════════════════════════════════════════════════════════
+document.querySelector('.hero').insertAdjacentHTML('beforeend',`
+  <div style="margin-top:.75rem">
+    <button id="musicBtn" onclick="window.toggleMusic()" style="
+      background:none;border:1px solid var(--border);color:var(--muted2);
+      font-size:12px;font-family:'DM Sans',sans-serif;padding:6px 16px;
+      border-radius:20px;cursor:pointer;transition:all .2s;letter-spacing:.04em">
+      🎵 Music OFF
+    </button>
+    <span style="font-size:11px;color:var(--muted);margin-left:8px">reggaeton study beat</span>
+  </div>
+`);
+
+// preload voices for TTS
+if(window.speechSynthesis){
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
+}
+
+// ════════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════════
 checkNewDay();
-renderSection('sec_vocab',VOCAB_DATA);
-renderSection('sec_verbs',VERB_DATA);
-renderSection('sec_grammar',GRAMMAR_DATA);
-renderSection('sec_culture',CULTURE_DATA);
+renderAll();
 renderLevels();
 updateUI();
 </script>
+
 </body>
 </html>
